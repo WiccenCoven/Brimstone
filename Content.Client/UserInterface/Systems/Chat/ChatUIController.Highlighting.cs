@@ -78,6 +78,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         HighlightsUpdated?.Invoke(customKeywords);
     }
 
+    // TC14: have to void the skills from the character data here
     private void OnCharacterUpdated(CharacterData data)
     {
 
@@ -86,7 +87,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
             return;
         }
 
-        var (_, job, _, _, entityName) = data;
+        var (_, job, _, _, entityName, _) = data;
         _currentCharacterName = entityName;
 
 

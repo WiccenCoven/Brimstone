@@ -1,7 +1,10 @@
-﻿using Content.Shared.CharacterInfo;
+﻿using Content.Shared._tc14.Skills.Prototypes;
+using Content.Shared.CharacterInfo;
+using Content.Shared.FixedPoint;
 using Content.Shared.Objectives;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.CharacterInfo;
 
@@ -29,6 +32,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
         RaiseNetworkEvent(new RequestCharacterInfoEvent(GetNetEntity(entity.Value)));
     }
 
+    // TC14: added skills info
     private void OnCharacterInfoEvent(CharacterInfoEvent msg, EntitySessionEventArgs args)
     {
         var entity = GetEntity(msg.NetEntity);
@@ -36,7 +40,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
         if (TerminatingOrDeleted(entity))
             return;
 
-        var data = new CharacterData(entity, msg.JobTitle, msg.Objectives, msg.Briefing, Name(entity));
+        var data = new CharacterData(entity, msg.JobTitle, msg.Objectives, msg.Briefing, Name(entity), msg.Skills);
 
         OnCharacterUpdate?.Invoke(data);
     }
@@ -48,12 +52,14 @@ public sealed partial class CharacterInfoSystem : EntitySystem
         return ev.Controls;
     }
 
+    // TC14: added skills info
     public readonly record struct CharacterData(
         EntityUid Entity,
         string Job,
         Dictionary<string, List<ObjectiveInfo>> Objectives,
         string? Briefing,
-        string EntityName
+        string EntityName,
+        Dictionary<ProtoId<SkillPrototype>, FixedPoint2> Skills
     );
 
     /// <summary>

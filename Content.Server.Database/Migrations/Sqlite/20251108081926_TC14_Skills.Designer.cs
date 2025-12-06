@@ -3,6 +3,7 @@ using System;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,12 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    partial class SqliteServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251108081926_TC14_Skills")]
+    partial class TC14_Skills
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.0");
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
             modelBuilder.Entity("Content.Server.Database.Admin", b =>
                 {
@@ -328,11 +331,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("name");
 
-                    b.Property<string>("ShortName")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("short_name");
-
                     b.HasKey("Id")
                         .HasName("PK_admin_rank");
 
@@ -550,26 +548,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("blacklist", (string)null);
                 });
 
-            modelBuilder.Entity("Content.Server.Database.CompanyMember", b =>
-                {
-                    b.Property<Guid>("PlayerUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("player_user_id");
-
-                    b.Property<string>("CompanyId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("company_id");
-
-                    b.Property<bool>("Owner")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("owner");
-
-                    b.HasKey("PlayerUserId", "CompanyId")
-                        .HasName("PK_company_members");
-
-                    b.ToTable("company_members", (string)null);
-                });
-
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.Property<int>("Id")
@@ -703,14 +681,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("profile_id");
 
-                    b.Property<int>("Value")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("value");
-
                     b.HasKey("Id")
                         .HasName("PK_passion");
-
-                    b.HasIndex("ProfileId");
 
                     b.HasIndex("ProfileId", "PassionName")
                         .IsUnique();
@@ -806,9 +778,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("admin_ooc_color");
 
-                    b.Property<long>("MonoCoins")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("mono_coins");
+                    b.PrimitiveCollection<string>("ConstructionFavorites")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("construction_favorites");
 
                     b.Property<int>("SelectedCharacterSlot")
                         .HasColumnType("INTEGER")
@@ -838,19 +811,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("age");
 
-                    b.Property<int>("BankBalance")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("bank_balance");
-
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("char_name");
-
-                    b.Property<string>("Company")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("company");
 
                     b.Property<string>("EyeColor")
                         .IsRequired()
@@ -887,10 +851,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("hair_name");
 
-                    b.Property<float>("Height")
-                        .HasColumnType("REAL")
-                        .HasColumnName("height");
-
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
@@ -925,10 +885,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
-
-                    b.Property<float>("Width")
-                        .HasColumnType("REAL")
-                        .HasColumnName("width");
 
                     b.HasKey("Id")
                         .HasName("PK_profile");
@@ -1656,19 +1612,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
-            modelBuilder.Entity("Content.Server.Database.CompanyMember", b =>
-                {
-                    b.HasOne("Content.Server.Database.Player", "Player")
-                        .WithMany("CompanyMembers")
-                        .HasForeignKey("PlayerUserId")
-                        .HasPrincipalKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_company_members_player_player_user_id");
-
-                    b.Navigation("Player");
-                });
-
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.HasOne("Content.Server.Database.Server", "Server")
@@ -2080,8 +2023,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("AdminWatchlistsLastEdited");
 
                     b.Navigation("AdminWatchlistsReceived");
-
-                    b.Navigation("CompanyMembers");
 
                     b.Navigation("JobWhitelists");
                 });

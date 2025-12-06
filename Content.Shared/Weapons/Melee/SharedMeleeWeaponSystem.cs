@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._tc14.Skills.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CombatMode;
@@ -48,6 +49,8 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private   SharedPhysicsSystem     _physics         = default!;
     [Dependency] private   IPrototypeManager       _protoManager    = default!;
     [Dependency] private   StaminaSystem           _stamina         = default!;
+
+    [Dependency] private readonly PlayerSkillsSystem _skills = default!; // TC14: implement finesse skill
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
