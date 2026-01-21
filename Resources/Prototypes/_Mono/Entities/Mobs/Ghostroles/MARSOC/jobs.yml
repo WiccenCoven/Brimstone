@@ -21,6 +21,9 @@
     - type: NpcFactionMember
       factions:
       - TSFMC
+    - type: Ironman
+      blockDeposit: true
+      blockBypassStack: FactionCredit
   - !type:AddLanguageSpecial
     languagesSpoken:
     - SolCommon
@@ -53,6 +56,9 @@
     - type: NpcFactionMember
       factions:
       - TSFMC
+    - type: Ironman
+      blockDeposit: true
+      blockBypassStack: FactionCredit
   - !type:AddLanguageSpecial
     languagesSpoken:
     - SolCommon

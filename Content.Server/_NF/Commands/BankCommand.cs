@@ -136,22 +136,22 @@ public sealed class BankCommand : IConsoleCommand
             // Player is in-game with entity that has bank account - use entity methods which will update the profile
             if (amount > 0)
             {
-                success = bankSystem.TryBankDeposit(playerEntity.Value, amount);
+                success = bankSystem.TryBankDeposit(playerEntity.Value, amount, true); // Mono - add force arg
                 if (success)
                 {
                     // Get updated balance after deposit
-                    success = bankSystem.TryGetBalance(targetSession, out int updatedBalance);
+                    success = bankSystem.TryGetBalance(targetSession, out int updatedBalance, true);
                     if (success)
                         newBalance = updatedBalance;
                 }
             }
             else if (amount < 0)
             {
-                success = bankSystem.TryBankWithdraw(playerEntity.Value, Math.Abs(amount));
+                success = bankSystem.TryBankWithdraw(playerEntity.Value, Math.Abs(amount), true); // Mono - add force arg
                 if (success)
                 {
                     // Get updated balance after withdrawal
-                    success = bankSystem.TryGetBalance(targetSession, out int updatedBalance);
+                    success = bankSystem.TryGetBalance(targetSession, out int updatedBalance, true);
                     if (success)
                         newBalance = updatedBalance;
                 }
