@@ -184,7 +184,7 @@
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
     autoCycle: false
   - type: StaticPrice
-    price: 20000
+    price: 2000
     vendPrice: 20000
   - type: SpeedModifiedOnWield
     walkModifier: 0.8
@@ -193,3 +193,60 @@
   - type: EyeCursorOffset
     maxOffset: 3
     pvsIncrease: 1
+
+# PDV Assault Borg
+
+- type: entity
+  name: PD-VI-C "Sultan's Pulsar" shotgun (4 gauge buckshot)
+  parent: [ BaseItem ]
+  id: WeaponShotgunSultanPulsarCyborg
+  description: A beast of a bolt-action shotgun, capable of firing the Sultan's finest 4-gauge with exceptional accuracy, modified to replenish ammunition from an assault borg's internal capacitors.
+  components:
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,5,0
+    sprite: _Mono/Objects/Weapons/Guns/Shotguns/SultansPulsar_inhands_64x.rsi
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Shotguns/SultansPulsar.rsi
+    layers:
+    - state: icon
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Gun
+    minAngle: 1
+    maxAngle: 2
+    soundGunshot:
+      path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/bigshotgun_fire.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireRate: 0.7
+    projectileSpeed: 40 # Mono
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: GunSpreadModifier
+    spread: 0.4
+  - type: BasicEntityAmmoProvider
+    capacity: 8
+    count: 8
+    proto: ShellShotgun23x75mmBuckshot
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Cock/shotgun_close.ogg
+  - type: AmmoCounter
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: StaticPrice
+    price: 2000
+    vendPrice: 20000
+  - type: EmitSoundOnPickup
+    sound:
+      collection: ShotgunsPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: ShotgunsDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: ShotgunsDrop
