@@ -1,0 +1,89 @@
+<Document>
+  # FINCH-CLASS BRAWLER
+  <Box>
+  <GuideEntityEmbed Entity="WeaponLaserTurretL1Phalanx"/>
+  <GuideEntityEmbed Entity="WeaponTurretVespera"/>
+  <GuideEntityEmbed Entity="WeaponTurretType35"/>
+  </Box>
+    [color=#a4885c]Ship Size:[/color] Medium
+
+	[color=#a4885c]Recommended Crew:[/color] 1-3
+
+	[color=#a4885c]Power Gen Type:[/color] Plasma
+
+	[color=#a4885c]Expeditions:[/color] None
+
+	[color=#a4885c]IFF Console:[/color] Included
+
+  "A purpose built ship designed to engage in shuttle combat, with a onboard kitchen, bedroom and washroom (not intended for long term living). Aswell, its broadside grills provide another layer of armor to complement its frontal weapons."
+
+  # PREFLIGHT CHECKLIST
+
+  ## 1. Power supply
+
+  ## 1.1. Battery units
+  <Box>
+   
+  <GuideEntityEmbed Entity="SMESBasic"/>
+  <GuideEntityEmbed Entity="SubstationBasic"/>
+  <GuideEntityEmbed Entity="APCBasic"/>
+  </Box>
+
+  - Check that the SMES unit is anchored to the floor.
+  - Check that the substation unit is anchored to the floor.
+  - Check that all APC unit's Main Breakers are toggled on.
+
+  ## 1.2. Z-Pinch generator unit.
+  <Box>
+  <GuideEntityEmbed Entity="GeneratorCRPinchShuttle"/>
+  <GuideEntityEmbed Entity="FuelPlasma"/>
+  <GuideEntityEmbed Entity="ComputerPowerMonitoring"/>
+  </Box>
+
+  - Check that the generator unit is properly anchored.
+  - Check that the generator unit is connected to the cable terminal of your SMES via HV.
+  - Check the fuel remaining of the generator unit.
+  - Set the generator unit output power to 72 kW.
+  - Enable Injection.
+
+  ## 2. Atmospherics
+
+  ## 2.1. Distribution Loop
+  <Box>
+  <GuideEntityEmbed Entity="OxygenCanister"/>
+  <GuideEntityEmbed Entity="NitrogenCanister"/>
+  <GuideEntityEmbed Entity="GasMixer"/>
+  <GuideEntityEmbed Entity="GasPressurePump"/>
+  </Box>
+
+  - Ensure O2 and N2 canisters are anchored to mixer connector ports.
+  - Check that the mixer settings are suitable (~22% oxygen, ~78% nitrogen, 101.325 kpa).
+  - Enable the gas mixer.
+
+  ## 2.2. Waste Loop
+  <Box>
+  <GuideEntityEmbed Entity="AirAlarm"/>
+  <GuideEntityEmbed Entity="GasValve"/>
+  </Box>
+
+  - Ensure that the air alarm is on proper settings for your species.
+
+  ## 3. Other checks
+  <Box>
+  <GuideEntityEmbed Entity="Gyroscope"/>
+  <GuideEntityEmbed Entity="GravityGeneratorMini"/>
+  <GuideEntityEmbed Entity="ButtonFrameCaution"/>
+  </Box>
+
+  - Check that the gyroscope is anchored, powered, and enabled.
+  - Check that the mini gravity generator is anchored, powered, and enabled.
+  - Check that the thrusters are powered, and enabled.**
+  - Check that the blast doors are powered, enabled and properly hooked up to their respective buttons.**
+
+  ## Sidenotes
+
+  * - Finch-class service shuttles are equipped with a power monitoring computer that can be used to appraise the ship's total power production and consumption. An unmodified Finch-class shuttle requires ~71.1 kW of power to remain operational.
+
+  ** - The side grill armor is highly susceptible to damage, ensure your possession of an SRD in order to propley maintain them in the ideal condition throught your usage of your Finch.
+
+</Document>
