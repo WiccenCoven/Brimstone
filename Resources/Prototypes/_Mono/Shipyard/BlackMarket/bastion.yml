@@ -4,8 +4,8 @@
   id: Bastion
   parent: BaseVesselAntag
   name: PDV Bastion
-  description: A long ranged design using 2 Hydra 220mm Cannons and 4 AK570 57mm autocannons, stand firm and sink the invaders.
-  price: 95500
+  description: A long ranged design using 2 Cyrexa 220mm Cannons and 2 Fang 90mm autocannons, armed with 4 L85 autocannons and one Sunny flare system for point defense. Stand firm and sink the invaders.
+  price: 102000 # Appraises at 81k
   category: Medium
   group: BlackMarket
   access: Pirate
