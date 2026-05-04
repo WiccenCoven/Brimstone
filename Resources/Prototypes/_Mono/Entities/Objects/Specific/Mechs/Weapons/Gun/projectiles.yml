@@ -21,7 +21,7 @@
   - type: ProjectileSpread
     proto: MechPelletShotgun
     count: 6
-    spread: 15
+    spread: 30
 
 - type: entity
   id: MechCoilgunSabot
@@ -32,13 +32,13 @@
   - type: Projectile
     damage:
       types:
-        Structural: 150
+        Structural: 550
         Piercing: 150
         Shock: 0
   - type: EmpOnTrigger
-    range: 4
+    range: 5
     energyConsumption: 2700000
-    disableDuration: 30
+    disableDuration: 10
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
@@ -64,28 +64,6 @@
     shape: triangle
   - type: TimedDespawn
     lifetime: 1
-
-- type: entity
-  id: 60mmMechShell
-  name: 60mm shell
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Structural: 420
-        Blunt: 100
-        Piercing: 210
-  - type: RadarBlip
-    scale: 2.5
-    shape: triangle
-  - type: Explosive
-    explosionType: Default
-    totalIntensity: 10
-    intensitySlope: 5
-    maxIntensity: 25
-    maxTileBreak: 1
 
 - type: entity
   id: 35mmBullet
@@ -117,16 +95,16 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 60
-        Blunt: 50
-        Structural: 250
+        Piercing: 40
+        Blunt: 30
+        Structural: 300
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 15
-    intensitySlope: 20
-    totalIntensity: 15
-    maxTileBreak: 1
+    totalIntensity: 30
+    intensitySlope: 2
+    maxIntensity: 4
+    maxTileBreak: 2
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -170,7 +148,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 200
+    totalIntensity: 300
     intensitySlope: 4
     maxIntensity: 100
   - type: GatheringProjectile
@@ -178,10 +156,10 @@
   - type: MiningGatheringHard
   - type: TargetSeeking
     acceleration: 20
-    detectionRange: 100
-    scanArc: 5
-    launchSpeed: 10
-    maxSpeed: 64
+    detectionRange: 175
+    scanArc: 10
+    launchSpeed: 50
+    maxSpeed: 120
 
 - type: entity
   id: BlanketFlare
@@ -300,7 +278,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 70
+        Piercing: 45
+        Structural: 70
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -308,8 +287,8 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 12
-    intensitySlope: 4
+    totalIntensity: 27
+    intensitySlope: 3
     maxIntensity: 3
     maxTileBreak: 1
 
@@ -322,9 +301,9 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 25
-        Structural: 400
-        Heat: 50
+        Radiation: 10
+        Structural: 600
+        Heat: 45
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -343,7 +322,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 25
-    intensitySlope: 12
-    maxIntensity: 15
+    totalIntensity: 40
+    intensitySlope: 4
+    maxIntensity: 6
     maxTileBreak: 1
