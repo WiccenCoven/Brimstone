@@ -64,7 +64,7 @@
 
 - type: entity
   name: CS KMP-WSPR (7.62x39mm)
-  parent: BaseWeaponRifle # Mono - C3
+  parent: [ BaseWeaponRifle, BaseFactionGearPDVT2 ] # Mono
   id: WeaponRifleWSPR
   description: A cutting-edge Dynasty burst rifle, versatile and reliable. Uses 7.62x39mm ammo.
   components:
@@ -121,7 +121,7 @@
 
 - type: entity
   name: PA M-90 (7.62x51mm) # mono - 762x51mm
-  parent: BaseWeaponRifle
+  parent: [ BaseWeaponRifle, BaseFactionGearPDVT2 ] # Mono
   id: WeaponRifleM90
   description: A compact bullpup design. Uses 7.62x51mm rifle ammo. # mono
   components:
@@ -191,7 +191,7 @@
 
 - type: entity
   name: CS Burner (12.7x99mm)
-  parent: BaseWeaponRifle # Mono - Changed to HighValue
+  parent: [ BaseWeaponRifle, BaseFactionGearPDVT3 ] # Mono
   id: WeaponRifleBurner
   description: A high caliber syndicate gun chambered in 12.7x99mm, capable of firing anti-material and high explosive rounds.
   components:
