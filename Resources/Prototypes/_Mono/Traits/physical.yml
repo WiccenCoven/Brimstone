@@ -80,7 +80,8 @@
     components:
     - BorgChassis
   components:
-  - type: WillToLive
+  - type: MobThresholdOffset
+    deadOffset: 15
 
 - type: trait
   id: WillToDie
@@ -90,13 +91,16 @@
   cost: -1
   mutuallyExclusiveTraits:
   - WillToLive
+  - Redshirt
   speciesBlacklist:
   - IPC
   blacklist:
     components:
     - BorgChassis
   components:
-  - type: WillToDie
+  - type: MobThresholdOffset
+    deadOffset: -15
+
 
 - type: trait
   id: Thieving
@@ -250,14 +254,15 @@
   cost: -8
   mutuallyExclusiveTraits:
   - WillToLive
+  - WillToDie
   speciesBlacklist:
   - IPC
   blacklist:
     components:
     - BorgChassis
   components:
-  - type: WillToDie
-    deadDecrease: 100
+  - type: MobThresholdOffset
+    deadOffset: -100
 
 - type: trait
   id: StrikingCalluses
@@ -308,7 +313,7 @@
           Blunt: 3.5
           Slash: 3.5
           Piercing: 3.5
-          
+
 - type: trait
   id: HardenedLymphocytes
   name: trait-hardened-lymphocytes-name

@@ -1,10 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Mono.Humanoid;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Events;
+using Content.Shared.Sprite;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Mobs.Systems;
@@ -335,9 +337,27 @@ public sealed class MobThresholdSystem : EntitySystem
     private void CheckThresholds(EntityUid target, MobStateComponent mobStateComponent,
         MobThresholdsComponent thresholdsComponent, DamageableComponent damageableComponent, EntityUid? origin = null)
     {
+
+        var ev = new QueryMobThresholdsEvent();
+        RaiseLocalEvent(target, ref ev);
+        Log.Debug($"ThresholdEvent for {ToPrettyString(target)}: Scale={ev.Scale:F2}, Crit={ev.CritOffset:F2}, Death={ev.DeathOffset:F2}");
+
         foreach (var (threshold, mobState) in thresholdsComponent.Thresholds.Reverse())
         {
-            if (damageableComponent.TotalDamage < threshold)
+            // Mono Begin
+
+            float scale = 1;
+            if (ev.Scale != 0) // To scale from being zeroed out from no response i.e. comp not initialized yet.
+                scale = ev.Scale;
+            float offset = 0;
+            if (mobState == MobState.Dead)
+                offset += ev.DeathOffset;
+            if (mobState == MobState.Critical)
+                offset += ev.CritOffset;
+
+            // Mono End
+
+            if (damageableComponent.TotalDamage < (threshold + (FixedPoint2)offset) * scale) // Mono - Add threshold scale and offset.
                 continue;
 
             TriggerThreshold(target, mobState, mobStateComponent, thresholdsComponent, origin);
@@ -474,8 +494,10 @@ public sealed class MobThresholdSystem : EntitySystem
         UpdateAllEffects((ent, ent, null, null), args.NewMobState);
     }
 
+
     #endregion
 }
+
 
 /// <summary>
 /// Event that triggers when an entity with a mob threshold is checked
