@@ -1,0 +1,57 @@
+- type: entity
+  id: SupermatterLightning
+  name: supermatter lightning
+  description: Lightning from the supermatter.
+  parent: Lightning
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    layers:
+    - state: "lightning_1"
+      color: "#00FF00"
+      shader: unshaded
+  - type: Electrified
+    requirePower: false
+    shockDamage: 10
+  - type: Lightning
+    canArc: true
+    lightningPrototype: SupermatterLightning
+  - type: Beam
+    sound: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  id: SupermatterLightningCharged
+  name: charged supermatter lightning
+  parent: SupermatterLightning
+  components:
+  - type: Sprite
+    layers:
+    - state: "blue_lightning"
+      color: "#00FFFF"
+      shader: unshaded
+  - type: Electrified
+    requirePower: false
+    shockDamage: 20
+  - type: Lightning
+    canArc: true
+    lightningPrototype: SupermatterLightningCharged
+
+- type: entity
+  id: SupermatterLightningSupercharged
+  name: supercharged supermatter lightning
+  parent: SupermatterLightning
+  components:
+  - type: Sprite
+    layers:
+    - state: "blue_lightning"
+      color: "#FFFF00"
+      shader: unshaded
+  - type: Electrified
+    requirePower: false
+    shockDamage: 30
+  - type: Lightning
+    canArc: true
+    lightningPrototype: SupermatterLightningSupercharged
+  - type: Beam
+    sound: /Audio/Effects/Lightning/lightningbolt.ogg

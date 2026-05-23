@@ -1,0 +1,113 @@
+- type: entity
+  id: Supermatter
+  name: supermatter
+  description: A dense chunk of supermatter. You probably shouldn't get this close to it.
+  parent: BaseMachinePowered
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Transform
+      noRot: true
+      anchored: true
+
+    - type: Sprite
+      sprite: _EE/Structures/Power/Generation/Supermatter/supermatter.rsi
+      drawdepth: Objects
+      scale: 1, 1
+      layers:
+        - state: supermatter
+        - state: supermatter-glow
+          shader: unshaded
+
+    - type: Anchorable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          hard: true
+          mask:
+            - Impassable
+            - MidImpassable
+            - HighImpassable
+            - LowImpassable
+            - InteractImpassable
+            - Opaque
+          layer:
+            - MidImpassable
+            - HighImpassable
+            - BulletImpassable
+            - InteractImpassable
+
+    - type: Supermatter
+    - type: Explosive
+      explosionType: Supermatter
+      totalIntensity: 120000
+      intensitySlope: 5
+      maxIntensity: 100
+    - type: AtmosDevice
+    - type: RadiationSource
+    - type: PowerSupplier
+      supplyRampRate: 10000
+      supplyRampTolerance: 10000
+
+    - type: NodeContainer
+      nodes:
+        device:
+          !type:CableDeviceNode
+          nodeGroupID: HVPower
+
+    - type: DeviceNetwork
+      deviceNetId: Wired
+      receiveFrequencyId: SmartMetrics
+      transmitFrequencyId: SmartMetrics
+      prefix: device-address-prefix-supermatter
+      examinableAddress: true
+
+    - type: DeviceLinkSource
+      ports:
+        - SupermatterInactive
+        - SupermatterNormal
+        - SupermatterCaution
+        - SupermatterWarning
+        - SupermatterDanger
+        - SupermatterEmergency
+        - SupermatterDelaminating
+
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 9999
+          behaviors:
+            - !type:ExplodeBehavior
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                ScrapSteel:
+                  min: 1
+                  max: 1
+
+    - type: AmbientSound
+      volume: -10
+      range: 100
+      sound:
+        path: /Audio/_EE/Supermatter/supermatter.ogg
+
+    - type: Appearance
+
+    - type: PointLight
+      enabled: true
+      color: "#00FF00"
+      radius: 3
+      energy: 2
+      castShadows: false
+    - type: GuideHelp
+      guides:
+      - SupermatterEngine

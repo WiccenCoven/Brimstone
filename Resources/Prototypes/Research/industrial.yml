@@ -182,6 +182,7 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
+  - ElectrolyzerMachineCircuitboard # Mono/Funky
   - CrystallizerMachineCircuitboard # Mono
   #  - FireExtinguisherBluespace # DeltaV
   technologyPrerequisites:
@@ -214,7 +215,7 @@
   - ShipRepairDevice
   - ShipRepairDeviceAmmo
   - NFBlueprintRCDAmmo
-  # Mono edit end 
+  # Mono edit end
   technologyPrerequisites:
   - SuperParts
   position: -1, 18

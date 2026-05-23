@@ -100,6 +100,26 @@
   category: cargoproduct-category-name-atmospherics
   group: market
 
+- type: cargoProduct
+  id: CrateEngineeringHFROrder # Mono - HFR should be buyable from the TM
+  icon:
+    sprite: Structures/Storage/Crates/engicrate_secure.rsi
+    state: icon
+  product: CrateEngineeringHFR
+  cost: 100000 # Mono - given what is possible with this baby, it should be expensive
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
+- type: cargoProduct
+  id: AtmosphericsElectrolyzerFlatpack
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: base
+  product: ElectrolyzerFlatpack
+  cost: 12000
+  category: cargoproduct-category-name-atmospherics
+  group: market
+
 #- type: cargoProduct
 #  name: "tritium canister"
 #  id: AtmosphericsTritium

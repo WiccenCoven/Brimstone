@@ -431,6 +431,10 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
 
         _audio.PlayGlobal(farSound, farFilter, true, farSound.Params);
 
+        var tilesPerTick = queued.Proto.TilesPerTick ?? TilesPerTick;
+        if (tilesPerTick < 1)
+            tilesPerTick = 1;
+
         return new Explosion(this,
             queued.Proto,
             spaceData,
@@ -443,6 +447,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             queued.TileBreakScale,
             queued.MaxTileBreak,
             queued.CanCreateVacuum,
+            tilesPerTick,
             EntityManager,
             _mapManager,
             visualEnt,

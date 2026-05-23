@@ -1,0 +1,78 @@
+<Document>
+  # Hypertorus Fusion Reactor
+
+  The hypertorus fusion reactor is a multiblock fusion engine built around a central core. It can produce a lot of power, but it is very sensitive to heat, gas mix, and power handling.
+
+  ## Precautions
+
+  [bold][color=red]DO NOT POWER THE HFR UNTIL THE FRAME, COOLING, AND INPUT LINES ARE READY.[/color][/bold]
+
+  Before starting the reactor, keep these points in mind:
+
+  • Build the machine exactly as shown below.
+
+  • Do not start the reactor without a prepared cooling loop.
+
+  • The machine consumes 100 kW while running, and cooling stops during a power outage.
+
+  • The reactor cannot be dismantled or powered off while its power level is above 0.
+
+  • Waste gases cannot be removed while the power level is above 5.
+
+  • Only helium and antinoblium can be removed from the fusion mix.
+
+  • Hypernoblium lowers mix power, while antinoblium raises it sharply.
+
+  • High heat capacity gases are harder to heat or cool.
+
+  • Low heat capacity gases are easier to heat or cool.
+  <Box>
+    <GuideEntityEmbed Entity="HFRCorner" Rotation="-180" Caption="" Margin="0" />
+    <GuideEntityEmbed Entity="HFRConsole" Rotation="180" Caption="" Margin="0" />
+    <GuideEntityEmbed Entity="HFRCorner" Rotation="90" Caption="" Margin="0" />
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="HFRFuelInput" Rotation="-90" Caption="" Margin="0" />
+    <GuideEntityEmbed Entity="HFRCore" Rotation="0" Caption="" Margin="0" />
+    <GuideEntityEmbed Entity="HFRModeratorInput" Rotation="90" Caption="" Margin="0" />
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="HFRCorner" Rotation="-90" Caption="" Margin="0" />
+    <GuideEntityEmbed Entity="HFRWasteOutput" Rotation="0" Caption="" Margin="0" />
+    <GuideEntityEmbed Entity="HFRCorner" Rotation="0" Caption="" Margin="0" />
+  </Box>
+
+  ## Reactor Parts
+
+  The console powers the reactor on and lets you manage its controls.
+  The core is the center of the fusion process.
+  The fuel input feeds the reaction mix.
+  The moderator input is used to tune the reaction.
+  The waste output removes usable waste gases and byproducts.
+  The corner pieces complete the multiblock frame.
+
+  ## Operating Instructions
+
+  • Build the machine as shown above.
+
+  • Create a 50/50 mix of hydrogen and tritium, totaling roughly 2000 moles.
+
+  • Fill the cooling loop with plasma or hypernoblium and cool it further with space or freezers if needed.
+
+  • Connect the fuel mix to the fuel injector port and only allow about 1000 moles into the machine at first.
+
+  • Set the Heat Conductor to 500 when starting the reaction, then lower it to 100 once the power level exceeds 1.
+
+  • If the reaction starts to run hot, raise the Heat Conductor and Current Damper, reduce fuel injection, and adjust the Magnetic Constrictors until the heat output turns negative.
+
+  • Strengthen cooling and use a high heat capacity moderator gas when the reactor becomes unstable.
+
+  ## Products
+
+  Depending on the chosen fuel mix, the HFR can produce helium, nitrogen, carbon dioxide, water vapor, pluoxium, anti-noblium, plasma, oxygen, BZ, hyper-noblium, proto-nitrate, zauker, healium, and ammonia.
+
+  ## Summary
+
+  The HFR is best treated as a controlled fusion system rather than a simple power machine. Keep the cooling loop stable, manage the fuel and moderator carefully, and watch the console closely before increasing output.
+</Document>
+

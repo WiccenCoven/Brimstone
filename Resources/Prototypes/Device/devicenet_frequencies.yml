@@ -94,6 +94,11 @@
   frequency: 1173
 
 - type: deviceFrequency
+  id: SmartMetrics
+  name: device-frequency-prototype-name-smart-metrics
+  frequency: 1174
+
+- type: deviceFrequency
   id: MailingUnit
   name: device-frequency-prototype-name-mailing-units
   frequency: 2300

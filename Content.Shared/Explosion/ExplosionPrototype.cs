@@ -78,6 +78,13 @@ public sealed partial class ExplosionPrototype : IPrototype
     public int SmallSoundIterationThreshold = 6;
 
     /// <summary>
+    ///     Optional per-prototype explosion processing budget.
+    ///     If set, this explosion will process this many tiles per tick instead of the global CVar value.
+    /// </summary>
+    [DataField("tilesPerTick")]
+    public int? TilesPerTick;
+
+    /// <summary>
     /// How far away another explosion in the same tick can be and be combined.
     /// Total intensity is added to the original queued explosion.
     /// </summary>

@@ -3,6 +3,7 @@ device-frequency-prototype-name-atmos = Atmospheric Devices
 device-frequency-prototype-name-suit-sensors = Suit Sensors
 device-frequency-prototype-name-crew-monitor = Crew Monitor
 device-frequency-prototype-name-lights = Smart Lights
+device-frequency-prototype-name-smart-metrics = Smart Metrics
 device-frequency-prototype-name-mailing-units = Mailing Units
 device-frequency-prototype-name-pdas = PDAs
 device-frequency-prototype-name-fax = Fax

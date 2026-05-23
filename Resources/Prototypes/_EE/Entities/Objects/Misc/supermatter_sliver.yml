@@ -1,0 +1,28 @@
+- type: entity
+  id: SupermatterSliver
+  name: supermatter sliver
+  description: A small piece of supermatter. Still extremely dangerous.
+  parent: BaseItem
+  components:
+    - type: Item
+      size: Small
+    - type: Sprite
+      sprite: _EE/Structures/Power/Generation/Supermatter/supermatter_sliver.rsi
+      state: icon
+    - type: DamageOnInteract
+      damage:
+        types:
+          Heat: 5
+      interactSound:
+        path: /Audio/_EE/Supermatter/calm.ogg
+    - type: StaticPrice
+      price: 500
+    - type: Stack
+      stackType: SupermatterSliver
+      count: 1
+    - type: PointLight
+      enabled: true
+      color: "#00FF00"
+      radius: 1
+      energy: 1
+      castShadows: false

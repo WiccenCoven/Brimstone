@@ -16,8 +16,16 @@
       NitrousOxide: stationNO
       Frezon: danger
       BZ: danger  #Funky
-      Healium: stationNO #Funky 
+      Healium: stationNO #Funky
       Nitrium: danger #Funky
+      Pluoxium: ignore #Funky
+      Hydrogen: danger #Funky
+      HyperNoblium: stationAmmonia #Funky
+      ProtoNitrate: danger #Funky
+      Zauker: danger #Funky
+      Halon: danger #Funky
+      Helium: stationAmmonia #Funky
+      AntiNoblium: danger #Funky
 
 - type: entity
   parent: [AirSensorVoxBase, AirSensor]
@@ -45,6 +53,14 @@
     - BZ #Funky
     - Healium #Funky
     - Nitrium #Funky
+    - Pluoxium #Funky
+    - Hydrogen #Funky
+    - HyperNoblium #Funky
+    - ProtoNitrate #Funky
+    - Zauker #Funky
+    - Halon #Funky
+    - Helium #Funky
+    - AntiNoblium #Funky
 
 # use this to prevent overriding filters with hardcoded defaults
 - type: entity

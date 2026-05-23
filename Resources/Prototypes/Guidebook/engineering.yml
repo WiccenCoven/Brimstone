@@ -51,6 +51,8 @@
   - AtmosphericUpsets
   - AtmosTools
   - Gasses
+  - MonoGasses
+  - HFR
   - GasMining # Frontier
 
 - type: guideEntry
@@ -254,6 +256,16 @@
   text: "/ServerInfo/Guidebook/Engineering/Gasses.xml"
 
 - type: guideEntry
+  id: MonoGasses
+  name: guide-entry-mono-gasses
+  text: "/ServerInfo/_Mono/Guidebook/Engineering/MonoGasses.xml"
+
+- type: guideEntry
+  id: HFR
+  name: guide-entry-hfr
+  text: "/ServerInfo/_Mono/Guidebook/Engineering/HFR.xml"
+
+- type: guideEntry
   id: ShuttleCraft
   name: guide-entry-shuttle-craft
   text: "/ServerInfo/Guidebook/Engineering/Shuttlecraft.xml"
@@ -313,6 +325,12 @@
   - TEG
   - RTG
   - SolarPanels
+  - SupermatterEngine
+
+- type: guideEntry
+  id: SupermatterEngine
+  name: guide-entry-supermatter-engine
+  text: "/ServerInfo/_Mono/Guidebook/Engineering/Supermatter.xml"
 
 - type: guideEntry
   id: AME

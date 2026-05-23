@@ -94,7 +94,7 @@ public sealed partial class ExplosionSystem
         Stopwatch.Restart();
         var x = Stopwatch.Elapsed.TotalMilliseconds;
 
-        var tilesRemaining = TilesPerTick;
+        var tilesRemaining = _activeExplosion?.TilesPerTickBudget ?? TilesPerTick;
         while (tilesRemaining > 0 && MaxProcessingTime > Stopwatch.Elapsed.TotalMilliseconds)
         {
             // if there is no active explosion, get a new one to process
@@ -115,6 +115,8 @@ public sealed partial class ExplosionSystem
                 // intensity).
                 if (_activeExplosion == null)
                     continue;
+
+                tilesRemaining = Math.Min(tilesRemaining, _activeExplosion.TilesPerTickBudget);
 
                 // just a lil nap
                 if (SleepNodeSys)
@@ -565,6 +567,11 @@ public sealed partial class ExplosionSystem
 sealed class Explosion
 {
     /// <summary>
+    ///     Per-tick processing budget for this explosion.
+    /// </summary>
+    public readonly int TilesPerTickBudget;
+
+    /// <summary>
     ///     For every grid (+ space) that the explosion reached, this data struct stores information about the tiles and
     ///     caches the entity-lookup component so that it doesn't have to be re-fetched for every tile.
     /// </summary>
@@ -696,6 +703,7 @@ sealed class Explosion
         float tileBreakScale,
         int maxTileBreak,
         bool canCreateVacuum,
+        int tilesPerTickBudget,
         IEntityManager entMan,
         IMapManager mapMan,
         EntityUid visualEnt,
@@ -714,6 +722,7 @@ sealed class Explosion
         _tileBreakScale = tileBreakScale;
         _maxTileBreak = maxTileBreak;
         _canCreateVacuum = canCreateVacuum;
+        TilesPerTickBudget = Math.Max(1, tilesPerTickBudget);
         _entMan = entMan;
 
         _xformQuery = entMan.GetEntityQuery<TransformComponent>();

@@ -1,0 +1,17 @@
+# Electrolyzer
+
+The electrolyzer splits water vapor and processes specialty gases for atmospherics workflows.
+
+## Purpose
+- Converts gases into useful outputs for station industry and advanced setups.
+- Supports atmos/chemistry chains that depend on processed gas products.
+
+## Operation
+- Feed the machine with appropriate input gas.
+- Keep it powered and connected to your pipe network.
+- Route outputs to storage or downstream processing.
+
+## Practical Tips
+- Isolate the machine with dedicated piping to avoid contamination.
+- Add analyzers/sensors for pressure and composition checks.
+- Buffer output in tanks before feeding sensitive systems.

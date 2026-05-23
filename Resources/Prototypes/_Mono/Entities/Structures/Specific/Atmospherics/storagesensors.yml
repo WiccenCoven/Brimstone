@@ -21,7 +21,14 @@
         Healium: stationNO
         Nitrium: danger
         Pluoxium: ignore
-        
+        Hydrogen: danger
+        HyperNoblium: stationAmmonia
+        ProtoNitrate: danger
+        Zauker: danger
+        Halon: danger
+        Helium: stationAmmonia
+        AntiNoblium: danger
+
 - type: entity
   abstract: true
   parent: AirSensorBase
@@ -45,6 +52,13 @@
         Healium: ignore
         Nitrium: ignore
         Pluoxium: ignore
+        Hydrogen: ignore
+        HyperNoblium: ignore
+        ProtoNitrate: ignore
+        Zauker: ignore
+        Halon: ignore
+        Helium: ignore
+        AntiNoblium: ignore
 
 #gas mining/general atmos work storage
 - type: entity

@@ -1,0 +1,6 @@
+- type: stack
+  id: SupermatterSliver
+  name: supermatter sliver
+  icon: { sprite: _EE/Structures/Power/Generation/Supermatter/supermatter_sliver.rsi, state: icon }
+  spawn: SupermatterSliver
+  maxCount: 30

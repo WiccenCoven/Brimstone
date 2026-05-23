@@ -631,5 +631,10 @@
 # Assmos - Crystallizer
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
+  id: ElectrolyzerMachineCircuitboard
+  result: ElectrolyzerMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
   id: CrystallizerMachineCircuitboard
   result: CrystallizerMachineCircuitboard

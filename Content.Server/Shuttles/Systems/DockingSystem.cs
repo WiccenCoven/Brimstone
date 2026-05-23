@@ -468,6 +468,7 @@ namespace Content.Server.Shuttles.Systems
 
             var shuttleUid = Transform(console.Value).GridUid;
             var otherShuttleUid = Transform(targetDock.Value).GridUid; // Mono
+            var gasDocking = (ourDockComp.DockType & targetDockComp.DockType & DockType.Gas) != DockType.None; // Mono
 
             // Mono - check both grids
             if (!CanShuttleDock(shuttleUid, ourDockComp) || !CanShuttleDock(otherShuttleUid, targetDockComp))

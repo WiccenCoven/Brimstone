@@ -29,6 +29,13 @@
         Healium: stationNO #
         Nitrium: danger  #Funky/Goob
         Pluoxium: ignore #Funky/Goob
+        Hydrogen: danger #Funky/Goob
+        HyperNoblium: stationAmmonia #Funky/Goob
+        ProtoNitrate: danger #Funky/Goob
+        Zauker: danger #Funky/Goob
+        Halon: danger #Funky/Goob
+        Helium: stationAmmonia #Funky/Goob
+        AntiNoblium: danger #Funky/Goob
     - type: Tag
       tags:
         - AirSensor

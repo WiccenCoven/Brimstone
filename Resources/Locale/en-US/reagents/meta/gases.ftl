@@ -30,3 +30,21 @@ reagent-desc-nitrium = A strong stimulant that will improve reflexes and stamina
 
 reagent-name-pluoxium = pluoxium
 reagent-desc-pluoxium = A gas that could supply even more oxygen to the bloodstream when inhaled, without being an oxidizer.
+
+reagent-name-hyper-noblium = hyper-noblium
+reagent-desc-hyper-noblium = A highly inert refrigerant gas with exceptional thermal properties.
+
+reagent-name-proto-nitrate = proto-nitrate
+reagent-desc-proto-nitrate = A reactive industrial gas used in advanced atmospherics processing.
+
+reagent-name-zauker = zauker
+reagent-desc-zauker = A toxic, highly energetic gas that is dangerous to inhale.
+
+reagent-name-halon = halon
+reagent-desc-halon = A fire-suppressing gas used to inhibit combustion.
+
+reagent-name-helium = helium
+reagent-desc-helium = A light, inert gas used in specialized atmospherics mixtures.
+
+reagent-name-anti-noblium = anti-noblium
+reagent-desc-anti-noblium = An exotic, unstable noblium analogue with hazardous properties.

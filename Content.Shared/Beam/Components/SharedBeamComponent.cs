@@ -11,31 +11,26 @@ public abstract partial class SharedBeamComponent : Component
     /// A unique list of targets that this beam collided with.
     /// Useful for code like Arcing in the Lightning Component.
     /// </summary>
-    [DataField("hitTargets")]
     public HashSet<EntityUid> HitTargets = new();
 
     /// <summary>
     /// The virtual entity representing a beam.
     /// </summary>
-    [DataField("virtualBeamController")]
     public EntityUid? VirtualBeamController;
 
     /// <summary>
     /// The first beam created, useful for keeping track of chains.
     /// </summary>
-    [DataField("originBeam")]
     public EntityUid OriginBeam;
 
     /// <summary>
     /// The entity that fired the beam originally
     /// </summary>
-    [DataField("beamShooter")]
     public EntityUid BeamShooter;
 
     /// <summary>
     /// A unique list of created beams that the controller keeps track of.
     /// </summary>
-    [DataField("createdBeams")]
     public HashSet<EntityUid> CreatedBeams = new();
 
     /// <summary>

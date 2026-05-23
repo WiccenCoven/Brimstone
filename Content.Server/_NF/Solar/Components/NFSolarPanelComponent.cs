@@ -1,3 +1,4 @@
+using Content.Shared.Guidebook;
 using Content.Server._NF.Solar.EntitySystems;
 
 namespace Content.Server._NF.Solar.Components;
@@ -16,6 +17,7 @@ public sealed partial class NFSolarPanelComponent : Component
     /// Maximum supply output by this panel (coverage = 1)
     /// </summary>
     [DataField]
+    [GuidebookData]
     public int MaxSupply = 1500;
 
     // Mono

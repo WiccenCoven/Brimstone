@@ -409,6 +409,22 @@
         weight: 0.05 # Frontier
       - id: FrezonCanister # Frontier
         weight: 0.03 # Frontier
+      - id: HydrogenCanister
+        weight: 0.03
+      - id: HalonCanister
+        weight: 0.015
+      - id: HeliumCanister
+        weight: 0.01
+      - id: BZCanister
+        weight: 0.01
+      - id: ProtoNitrateCanister
+        weight: 0.005
+      - id: ZaukerCanister
+        weight: 0.005
+      - id: HyperNobliumCanister
+        weight: 0.002
+      - id: AntiNobliumCanister
+        weight: 0.002
       - id: StorageCanister # Frontier
       - id: AmmoniaCanister # Frontier
       - id: WaterVaporCanister # Frontier

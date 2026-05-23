@@ -93,5 +93,6 @@
   - ContainmentFieldGeneratorCircuitboard # Mono
   - TelecomServerCircuitboard
   - SMESAdvancedMachineCircuitboard
+  - ElectrolyzerMachineCircuitboard # Mono/Funky
   - CrystallizerMachineCircuitboard # Mono/Funky
   # - HolopadMachineCircuitboard # Frontier: use NF variant

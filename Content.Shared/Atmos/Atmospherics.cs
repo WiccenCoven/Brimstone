@@ -166,18 +166,25 @@ namespace Content.Shared.Atmos
         public static Dictionary<Gas, string> GasAbbreviations = new Dictionary<Gas, string>()
         {
             [Gas.Ammonia] = Loc.GetString("gas-ammonia-abbreviation"),
+            [Gas.AntiNoblium] = Loc.GetString("gas-anti-noblium-abbreviation"), // Funky/Goob - Ported gas
             [Gas.BZ] = Loc.GetString("gas-bz-abbreviation"), // Funky/Goob - Ported gas
             [Gas.CarbonDioxide] = Loc.GetString("gas-carbon-dioxide-abbreviation"),
             [Gas.Frezon] = Loc.GetString("gas-frezon-abbreviation"),
+            [Gas.Halon] = Loc.GetString("gas-halon-abbreviation"), // Funky/Goob - Ported gas
             [Gas.Healium] = Loc.GetString("gas-healium-abbreviation"), // Funky/Goob - Ported gas
+            [Gas.Helium] = Loc.GetString("gas-helium-abbreviation"), // Funky/Goob - Ported gas
+            [Gas.Hydrogen] = Loc.GetString("gas-hydrogen-abbreviation"), // Funky/Goob - Ported gas
+            [Gas.HyperNoblium] = Loc.GetString("gas-hyper-noblium-abbreviation"), // Funky/Goob - Ported gas
             [Gas.Nitrium] = Loc.GetString("gas-nitrium-abbreviation"), // Funky/Goob - Ported gas
             [Gas.Nitrogen] = Loc.GetString("gas-nitrogen-abbreviation"),
             [Gas.NitrousOxide] = Loc.GetString("gas-nitrous-oxide-abbreviation"),
             [Gas.Oxygen] = Loc.GetString("gas-oxygen-abbreviation"),
             [Gas.Plasma] = Loc.GetString("gas-plasma-abbreviation"),
-			[Gas.Pluoxium] = Loc.GetString("gas-pluoxium-abbreviation"), // Funky/Goob - Ported gas
+            [Gas.Pluoxium] = Loc.GetString("gas-pluoxium-abbreviation"), // Funky/Goob - Ported gas
+            [Gas.ProtoNitrate] = Loc.GetString("gas-proto-nitrate-abbreviation"), // Funky/Goob - Ported gas
             [Gas.Tritium] = Loc.GetString("gas-tritium-abbreviation"),
             [Gas.WaterVapor] = Loc.GetString("gas-water-vapor-abbreviation"),
+            [Gas.Zauker] = Loc.GetString("gas-zauker-abbreviation"), // Funky/Goob - Ported gas
         };
 
 
@@ -187,18 +194,25 @@ namespace Content.Shared.Atmos
         public static Dictionary<Gas, string> GasNames = new Dictionary<Gas, string>()
         {
             [Gas.Ammonia] = Loc.GetString("gases-ammonia"),
+            [Gas.AntiNoblium] = Loc.GetString("gases-anti-noblium"), // Funky/Goob - Ported gas
             [Gas.BZ] = Loc.GetString("gases-bz"), // Funky/Goob - Ported gas
             [Gas.CarbonDioxide] = Loc.GetString("gases-co2"),
             [Gas.Frezon] = Loc.GetString("gases-frezon"),
+            [Gas.Halon] = Loc.GetString("gases-halon"), // Funky/Goob - Ported gas
             [Gas.Healium] = Loc.GetString("gases-healium"), // Funky/Goob - Ported gas
+            [Gas.Helium] = Loc.GetString("gases-helium"), // Funky/Goob - Ported gas
+            [Gas.Hydrogen] = Loc.GetString("gases-hydrogen"), // Funky/Goob - Ported gas
+            [Gas.HyperNoblium] = Loc.GetString("gases-hyper-noblium"), // Funky/Goob - Ported gas
             [Gas.Nitrium] = Loc.GetString("gases-nitrium"), // Funky/Goob - Ported gas
             [Gas.Nitrogen] = Loc.GetString("gases-nitrogen"),
             [Gas.NitrousOxide] = Loc.GetString("gases-n2o"),
             [Gas.Oxygen] = Loc.GetString("gases-oxygen"),
             [Gas.Plasma] = Loc.GetString("gases-plasma"),
             [Gas.Pluoxium] = Loc.GetString("gases-pluoxium"), // Funky/Goob - Ported gas
+            [Gas.ProtoNitrate] = Loc.GetString("gases-proto-nitrate"), // Funky/Goob - Ported gas
             [Gas.Tritium] = Loc.GetString("gases-tritium"),
             [Gas.WaterVapor] = Loc.GetString("gases-water-vapor"),
+            [Gas.Zauker] = Loc.GetString("gases-zauker"), // Funky/Goob - Ported gas
         };
 
         #region Excited Groups
@@ -228,7 +242,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Total number of gases. Increase this if you want to add more!
         /// </summary>
-        public const int TotalNumberOfGases = 13; //Funky/Goob: 9 >> 13
+        public const int TotalNumberOfGases = 20; // Funky/Goob/Mono: up to AntiNoblium (index 19)
 
         /// <summary>
         ///     This is the actual length of the gases arrays in mixtures.
@@ -305,9 +319,9 @@ namespace Content.Shared.Atmos
         ///     Divisor for Ammonia Oxygen reaction so that it doesn't happen instantaneously.
         /// </summary>
         public const float AmmoniaOxygenReactionRate = 10f;
-		
+
 		///Funky/Goob start
-		
+
         /// <summary>
         ///     The amount of energy 1 mole of BZ forming from N2O and plasma releases.
         /// </summary>
@@ -327,14 +341,104 @@ namespace Content.Shared.Atmos
         ///     The amount of energy 1 mol of Nitrium decomposing into nitrogen and water vapor releases.
         /// </summary>
         public const float NitriumDecompositionEnergy = 30e3f;
-		
+
 		/// <summary>
         ///     The amount of energy 1 mol of Pluoxium forming releases.
         /// </summary>
         public const float PluoxiumProductionEnergy = 250;
-		
+
+		/// <summary>
+		///     Burn rate delta for hydrogen fires (Assmos - /tg/ gases)
+		/// </summary>
+		public const float HydrogenBurnRateDelta = 2f;
+
+		/// <summary>
+		///     Minimum energy required for hydrogen to burn with oxygen (Assmos - /tg/ gases)
+		/// </summary>
+		public const float MinimumHydrogenOxyburnEnergy = 143000f;
+
+		/// <summary>
+		///     Oxygen factor for hydrogen burn calculations (Assmos - /tg/ gases)
+		/// </summary>
+		public const float HydrogenBurnOxyFactor = 100f;
+
+		/// <summary>
+		///     Hydrogen factor for hydrogen burn calculations (Assmos - /tg/ gases)
+		/// </summary>
+		public const float HydrogenBurnH2Factor = 10f;
+
+		/// <summary>
+		///     Energy released per mole of BZ produced (Assmos - /tg/ gases)
+		/// </summary>
+		public const float BZProductionEnergy = 80e3f;
+
+		/// <summary>
+		///     Energy released per mole of HyperNoblium produced (Assmos - /tg/ gases)
+		/// </summary>
+		public const float HyperNobliumProductionEnergy = 2e7f;
+
+		/// <summary>
+		///     Energy released per mole of Halon produced (Assmos - /tg/ gases)
+		/// </summary>
+		public const float HalonProductionEnergy = 91232.1f;
+
+		/// <summary>
+		///     Energy consumed per mole of Halon combusting (Assmos - /tg/ gases)
+		/// </summary>
+		public const float HalonCombustionEnergy = -2500f;
+
+		/// <summary>
+		///     Energy consumed per half mole of Zauker produced (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ZaukerProductionEnergy = 5000f;
+
+		/// <summary>
+		///     Temperature scaling factor for Zauker formation (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ZaukerTemperatureScale = 5e-6f;
+
+		/// <summary>
+		///     Energy released per mole of Zauker decomposing (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ZaukerDecompositionEnergy = 460f;
+
+		/// <summary>
+		///     Maximum moles of Zauker that can decompose per reaction tick (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ZaukerDecompositionMaxRate = 20f;
+
+		/// <summary>
+		///     Energy released per 2.2 moles of Proto-Nitrate produced (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ProtoNitrateProductionEnergy = 650f;
+
+		/// <summary>
+		///     Temperature scaling factor for Proto-Nitrate formation (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ProtoNitrateTemperatureScale = 5e-3f;
+
+		/// <summary>
+		///     Maximum moles of Hydrogen that can convert to Proto-Nitrate per tick (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ProtoNitrateHydrogenConversionMaxRate = 5f;
+
+		/// <summary>
+		///     Energy consumed converting 1 mole of Hydrogen to 0.5 mole Proto-Nitrate (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ProtoNitrateHydrogenConversionEnergy = -2500f;
+
+		/// <summary>
+		///     Energy released per mole of Tritium converted to Hydrogen via Proto-Nitrate (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ProtoNitrateTritiumConversionEnergy = 10000f;
+
+		/// <summary>
+		///     Energy consumed converting Proto-Nitrate with BZ (Assmos - /tg/ gases)
+		/// </summary>
+		public const float ProtoNitrateBZConversionEnergy = -10000f;
+
 		///Funky/Goob end
-		
+
         /// <summary>
         ///     Determines at what pressure the ultra-high pressure red icon is displayed.
         /// </summary>
@@ -426,9 +530,16 @@ namespace Content.Shared.Atmos
         Ammonia = 6,
         NitrousOxide = 7,
         Frezon = 8,
-        BZ = 9, //Funky/Goob
-        Healium = 10, //Funky/Goob
-        Nitrium = 11, //Funky/Goob
-		Pluoxium = 12, //Funky/Goob
+        BZ = 9, // Assmos - /tg/ gases
+        Healium = 10, // Assmos - /tg/ gases
+        Nitrium = 11, // Assmos - /tg/ gases
+        Pluoxium = 12, // Assmos - /tg/ gases
+        Hydrogen = 13, // Assmos - /tg/ gases
+        HyperNoblium = 14, // Assmos - /tg/ gases
+        ProtoNitrate = 15, // Assmos - /tg/ gases
+        Zauker = 16, // Assmos - /tg/ gases
+        Halon = 17, // Assmos - /tg/ gases
+        Helium = 18, // Assmos - /tg/ gases
+        AntiNoblium = 19, // Assmos - /tg/ gases
     }
 }
