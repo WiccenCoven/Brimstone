@@ -1,12 +1,17 @@
+using Content.Server.Administration.Commands;
 using Content.Server.Destructible;
 using Content.Server.Gatherable.Components;
+using Content.Shared.Construction.Components;
 using Content.Shared.Destructible;
 using Content.Shared.Interaction;
+using Content.Shared.Maps;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -19,6 +24,8 @@ public sealed partial class GatherableSystem : EntitySystem
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
@@ -51,7 +58,7 @@ public sealed partial class GatherableSystem : EntitySystem
         args.Handled = true;
     }
 
-    public void Gather(EntityUid gatheredUid, EntityUid? gatherer = null, GatherableComponent? component = null)
+    public void Gather(EntityUid gatheredUid, EntityUid? gatherer = null, GatherableComponent? component = null, bool deleteTileOnGather = false) // mono
     {
         if (!Resolve(gatheredUid, ref component))
             return;
@@ -76,7 +83,9 @@ public sealed partial class GatherableSystem : EntitySystem
 
         component.Gathered = true; // mono
 
-        var pos = _transform.GetMapCoordinates(gatheredUid);
+        var xform = Transform(gatheredUid); // mono
+
+        var pos = xform.Coordinates; // mono
 
         foreach (var (tag, table) in component.Loot)
         {
@@ -93,5 +102,9 @@ public sealed partial class GatherableSystem : EntitySystem
                 Spawn(loot, spawnPos);
             }
         }
+        // mono start
+        if (deleteTileOnGather && TryComp<MapGridComponent>(xform.GridUid, out var grid))
+            _map.SetTile((xform.GridUid.Value, grid), xform.Coordinates, Tile.Empty);
+        // mono end
     }
 }

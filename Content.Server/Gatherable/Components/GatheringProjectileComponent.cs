@@ -11,4 +11,10 @@ public sealed partial class GatheringProjectileComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("amount")]
     public int Amount = 1;
+
+    /// <summary>
+    /// Mono - should we break tiles on gather or not.
+    /// </summary>
+    [DataField]
+    public bool BreakTileOnGather;
 }
