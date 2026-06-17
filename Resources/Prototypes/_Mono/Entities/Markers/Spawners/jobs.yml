@@ -137,3 +137,53 @@
       state: robot
     - sprite: Mobs/Silicon/chassis.rsi
       state: robot_e
+
+#RSC
+
+- type: entity
+  id: SpawnPointRscLieutenantCaptain
+  parent: SpawnPointJobBase
+  name: Lieutenant-Captain
+  components:
+  - type: SpawnPoint
+    job_id: RscLieutenantCaptain
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    layers:
+    - state: banner-red
+
+- type: entity
+  id: SpawnPointRscFirstMate
+  parent: SpawnPointJobBase
+  name: First Mate
+  components:
+  - type: SpawnPoint
+    job_id: RscFirstMate
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    layers:
+    - state: banner-red
+
+- type: entity
+  id: SpawnPointRscSwashbuckler
+  parent: SpawnPointJobBase
+  name: Swashbuckler
+  components:
+  - type: SpawnPoint
+    job_id: RscSwashbuckler
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    layers:
+    - state: banner-red
+
+- type: entity
+  id: SpawnPointRscDeckhand
+  parent: SpawnPointJobBase
+  name: Deckhand
+  components:
+  - type: SpawnPoint
+    job_id: RscDeckhand
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    layers:
+    - state: banner-red
