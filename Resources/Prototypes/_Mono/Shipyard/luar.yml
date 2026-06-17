@@ -1,0 +1,36 @@
+
+- type: vessel
+  id: Luar
+  parent: BaseVessel
+  name: BSY Luar
+  description: A cramped, medium-range missile boat, protected by a MS-100 shield generator, passable frontal armor and thin side armor. Equipped with 4 ASM-302 "Vanyk" missile pods, split between the ship's sides.
+  price: 85000
+  category: Small
+  group: Shipyard
+  access: Mercenary
+  shuttlePath: /Maps/_Mono/Shuttles/luar.yml
+  guidebookPage: Null
+  class:
+  - Patrol
+  engine:
+  - Bananium
+
+- type: gameMap
+  id: Luar
+  mapName: 'BSY Luar'
+  mapPath: /Maps/_Mono/Shuttles/luar.yml
+  minPlayers: 0
+  stations:
+    Luar:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Luar MIL{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]
