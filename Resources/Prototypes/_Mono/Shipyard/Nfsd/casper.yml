@@ -1,0 +1,40 @@
+#made by burkia
+- type: vessel
+  id: Casper
+  parent: BaseVesselAntag
+  name: TSF-BNN Casper
+  description: A Brawler Cruiser in use with the Federation. Armed with 6 Cerberus and 4 Marauder as its main armanent. Powered by a NFR.
+  limit: 1 #this used to be 2 but i think i want it to feel more special like a T4 ship
+  price: 300000 #171862 exact appraise price, not giving it an actual price since it will always remain an LPC, however, this is yet another example of small shipguns not having actual prices while big ones have garangutan pricing for very similiar damage outputs (price based on sprite sizes, lol, we gotta adress this sometime) 
+  purchasable: false # voucher only
+  category: Large
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_Mono/Shuttles/Nfsd/casper.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  engine:
+  - NFR
+
+- type: gameMap
+  id: Casper
+  mapName: 'Casper'
+  mapPath: /Maps/_Mono/Shuttles/Nfsd/casper.yml
+  minPlayers: 0
+  stations:
+    Casper:
+      stationProto: StandardFrontierSecurityVessel
+      gridComponents:
+      - type: VesselInfo
+        description: "You can feel an overwhelming sense of dread. Sol Invictus."
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Casper TSFN{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          Deputy: [ 0, 0 ]
+          TsfBorg: [ 0, 0 ]

@@ -36,7 +36,7 @@
   id: MonoTSFVouchersDynamic
   recipes:
   - FlyssaVoucherTSF
-  - AltairVoucherTSF
+  - CasperVoucherTSF
   - ShipVoucherTsfT0Recipe
   - ShipVoucherTsfT1RandomRecipe
   - ShipVoucherTsfT2RandomRecipe

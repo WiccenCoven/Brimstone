@@ -79,7 +79,7 @@
   cost: 80000
   recipeUnlocks:
   - FlyssaVoucherTSF
-  - AltairVoucherTSF
+  - CasperVoucherTSF
   technologyPrerequisites:
   - TsfTierTwoVouchers
   - UniversalMaterialResearchT3

@@ -45,8 +45,8 @@
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
-  id: AltairVoucherTSF
-  result: ShipVoucherAltair
+  id: CasperVoucherTSF
+  result: ShipVoucherCasper
   completetime: 100
   materials:
     Steel: 40000

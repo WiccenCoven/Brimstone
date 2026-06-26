@@ -365,10 +365,10 @@
 # start T3
 
 - type: listing
-  id: UplinkSecurityT3VoucherAltair
-  name:  uplink-security-t3-altair-voucher-name
-  description: uplink-security-t3-altair-voucher-desc
-  productEntity: ShipVoucherAltair
+  id: UplinkSecurityT3VoucherCasper
+  name:  uplink-security-t3-casper-voucher-name
+  description: uplink-security-t3-casper-voucher-desc
+  productEntity: ShipVoucherCasper
   cost:
     FederationMilitaryCredit: 400
   categories:
