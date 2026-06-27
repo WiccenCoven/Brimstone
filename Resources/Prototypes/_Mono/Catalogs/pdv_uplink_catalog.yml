@@ -1410,10 +1410,10 @@
       - FactionStaticUplinkPdv
 
 - type: listing
-  id: UplinkSecurityT2VoucherVulture
-  name:  uplink-pdv-t2-vulture-voucher-name
-  description: uplink-pdv-t2-vulture-voucher-desc
-  productEntity: ShipVoucherVulture
+  id: UplinkSecurityT2VoucherInvicta
+  name:  uplink-pdv-t2-invicta-voucher-name
+  description: uplink-pdv-t2-invicta-voucher-desc
+  productEntity: ShipVoucherInvicta
   cost:
     Doubloon: 200
   categories:

@@ -283,8 +283,8 @@ uplink-pdv-t1-neptune-voucher-desc = A small card that contains the data for the
 uplink-pdv-t2-europa-voucher-name = PDV Europa LPC [T2]
 uplink-pdv-t2-europa-voucher-desc = A small card that contains the data for the procurement of a Europa-class cruiser from the flagship's reserves.
 
-uplink-pdv-t2-vulture-voucher-name = PDV Vulture LPC [T2]
-uplink-pdv-t2-vulture-voucher-desc = A small card that contains the data for the procurement of a Vulture-class mining rig from the flagship's reserves.
+uplink-pdv-t2-invicta-voucher-name = PDV Invicta LPC [T2]
+uplink-pdv-t2-invicta-voucher-desc = A small card that contains the data for the procurement of a Invicta-class cruiser from the flagship's reserves.
 
 uplink-pdv-t2-motleyanne-voucher-name = PDV Motley Anne LPC [T2]
 uplink-pdv-t2-motleyanne-voucher-desc = A small card that contains the data for the procurement of a Motley Anne-class carrier from the flagship's reserves.

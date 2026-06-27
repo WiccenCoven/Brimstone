@@ -1,0 +1,41 @@
+#Author: burkia
+
+- type: vessel
+  id: Invicta
+  parent: BaseVesselAntag
+  name: BT-Y Invicta
+  description: A cruiser design in use with the Vanguard, armed with 4 spinal Bofors, special mechanisms allow it to fire 4 Bofors with a staggered method, ensuring a new shell is delivered every 5 seconds instead of all at once, making missed shots not as punishing.
+  limit: 1 # Again I want higher Tier ships to feel special, I wish there was just a general Tier limit instead of static ship limit though
+  price: 250000 #appraises at 201754
+  purchasable: false # voucher only
+  category: Large
+  group: BlackMarket
+  access: Pirate
+  shuttlePath: /Maps/_Mono/Shuttles/BlackMarket/invicta.yml
+  guidebookPage: Null
+  class:
+  - Frigate
+  engine:
+  - NFR
+
+- type: gameMap
+  id: Invicta
+  mapName: 'Invicta'
+  mapPath: /Maps/_Mono/Shuttles/BlackMarket/invicta.yml
+  minPlayers: 0
+  stations:
+    Invicta:
+      stationProto: StandardFrontierVessel
+      gridComponents:
+      - type: VesselInfo
+        description: "."
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Invicta PDV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Pirate: [ 0, 0 ]
+            PdvBorg: [ 0, 0 ]
