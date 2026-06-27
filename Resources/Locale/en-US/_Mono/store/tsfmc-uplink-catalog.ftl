@@ -88,8 +88,8 @@ uplink-security-t0-voucher-desc = A single-use voucher for any small ship.
 uplink-security-t1-spica-voucher-name = TSFMC Spica LPC [T1]
 uplink-security-t1-spica-voucher-desc = A small card that contains the data for the procurement of a Spica-class escort from the flagship's reserves.
 
-uplink-security-t1-dagger-voucher-name = TSFMC Dagger LPC [T1]
-uplink-security-t1-dagger-voucher-desc = A small card that contains the data for the procurement of a Dagger-class railgun destroyer from the flagship's reserves.
+uplink-security-t1-gazer-voucher-name = TSFMC Gazer LPC [T1]
+uplink-security-t1-gazer-voucher-desc = A small card that contains the data for the procurement of a Gazer-class railgun destroyer from the flagship's reserves.
 
 uplink-security-t1-tarantula-voucher-name = TSFMC Tarantula LPC [T1]
 uplink-security-t1-tarantula-voucher-desc = A small card that contains the data for the procurement of a Tarantula-class escort from the flagship's reserves.

@@ -267,10 +267,10 @@
       - FactionStaticUplinkTsf
 
 - type: listing
-  id: UplinkSecurityT1VoucherDagger
-  name:  uplink-security-t1-dagger-voucher-name
-  description: uplink-security-t1-dagger-voucher-desc
-  productEntity: ShipVoucherDagger
+  id: UplinkSecurityT1VoucherGazer
+  name:  uplink-security-t1-gazer-voucher-name
+  description: uplink-security-t1-gazer-voucher-desc
+  productEntity: ShipVoucherGazer
   cost:
     FederationMilitaryCredit: 100
   categories:

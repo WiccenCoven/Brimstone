@@ -99,9 +99,9 @@
 
 - type: entity
   parent: BaseShipLPC
-  id: ShipVoucherDagger
-  name: TSF Dagger LPC [T1]
-  description: A small card that contains the data for the procurement of a Dagger-class railgun destroyer from the flagship's reserves.
+  id: ShipVoucherGazer
+  name: TSF Gazer LPC [T1]
+  description: A small card that contains the data for the procurement of a Gazer-class turbolaser destroyer from the flagship's reserves.
   components:
   - type: Sprite
     sprite: _Mono/Objects/Misc/lpcnew.rsi
@@ -118,7 +118,7 @@
     consoleType: Security
     companyName: TSF
     vessels:
-    - Dagger
+    - Gazer
   - type: StaticPrice
     vendPrice: 20000
 
@@ -241,7 +241,7 @@
     deleteSpawnerAfterSpawn: true
     prototypes:
     - ShipVoucherSpica
-    - ShipVoucherDagger
+    - ShipVoucherGazer
     - ShipVoucherTarantula
     - ShipVoucherSentinel
     - ShipVoucherMercury
