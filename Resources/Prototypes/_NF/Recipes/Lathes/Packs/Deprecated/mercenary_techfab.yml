@@ -208,7 +208,9 @@
   - UllmanMeleePlasmaBlade
   - WeaponShotgunJack
   ## LPC
-  - BalorDroneVoucherMerc
+  - BalorStraferDroneVoucherMerc
+  - BalorDoorknobDroneVoucherMerc
+  - BalorBulldogDroneVoucherMerc
 #Mono end
 
 - type: latheRecipePack
