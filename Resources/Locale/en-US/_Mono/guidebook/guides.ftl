@@ -36,3 +36,11 @@ guide-entry-mechs = Mechs
 guide-entry-s1mechs = Series 1 Mechs
 guide-entry-s2mechs = Series 2 Mechs
 guide-entry-s4mechs = Series 4 Mechs
+
+# TSFMC
+guide-entry-tsfranks = Ranks
+guide-entry-tsfsop = SOP
+guide-entry-security = TSFMC
+guide-entry-forensics = Forensics
+guide-entry-defusal = Large Bomb Defusal
+guide-entry-criminal-records = Criminal Records

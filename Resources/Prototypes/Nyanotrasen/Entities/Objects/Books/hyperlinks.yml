@@ -23,8 +23,8 @@
     sprite: Nyanotrasen/Objects/Misc/books.rsi
     layers:
     - state: law_space
-  #- type: HyperlinkBook
-  #  url: https://frontierstation.wiki.gg/wiki/Space_Law  #Frontier
+  # - type: HyperlinkBook
+    # url: https://frontierstation.wiki.gg/wiki/Space_Law  #Frontier
   - type: Tag
     tags:
     - Book
@@ -41,8 +41,11 @@
     sprite: Nyanotrasen/Objects/Misc/books.rsi
     layers:
     - state: nfsd_sop
-  #- type: HyperlinkBook
-  #  url: https://frontierstation.wiki.gg/wiki/NFSDSOP  #Frontier
+  - type: GuideHelp
+    guides:
+    - TSFSOP
+  # - type: HyperlinkBook
+  #   url: /ServerInfo/Guidebook/Security/TSFMCSOP.xml
   - type: Tag
     tags:
     - Book
