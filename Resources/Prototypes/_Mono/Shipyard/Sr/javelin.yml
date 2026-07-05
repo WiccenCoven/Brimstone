@@ -3,16 +3,16 @@
 # Discord: NazrinNya
 
 - type: vessel
-  id: Thorax
+  id: Javelin
   parent: BaseVessel
-  name: Thorax
-  description: A light mech carrier and factory, including 4 different docks for assistance.
-  price: 82500
+  name: Javelin
+  description: Extremely light vessel with HADES cannon. Prison cell included.
+  price: 91200 # 20% markup from 76000 appraisegrid
   category: Medium
   group: Sr
   access: Brig
-  mapchecker_group_override: Security
-  shuttlePath: /Maps/_Mono/Shuttles/thorax.yml
+  mapchecker_group_override: Security  # Treat this as a security vessel for mapchecker purposes
+  shuttlePath: /Maps/_Mono/Shuttles/javelin.yml
   guidebookPage: Null
   class:
   - Civilian
@@ -20,16 +20,16 @@
   - Uranium
 
 - type: gameMap
-  id: Thorax
-  mapName: 'Thorax'
-  mapPath: /Maps/_Mono/Shuttles/thorax.yml
+  id: Javelin
+  mapName: 'Javelin'
+  mapPath: /Maps/_Mono/Shuttles/javelin.yml
   minPlayers: 0
   stations:
-    Thorax:
+    Javelin:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Thorax SEC{1}'
+          mapNameTemplate: 'Javelin SEC{1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
