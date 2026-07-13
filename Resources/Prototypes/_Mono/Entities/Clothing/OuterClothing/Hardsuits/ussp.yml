@@ -172,6 +172,8 @@
   - type: StaticPrice
     price: 1350
     vendPrice: 8000
+  #- type: PirateBountyItem # Mono
+  #  id: ClothingOuterHardsuitTacsuitHighValue
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -216,6 +218,8 @@
   - type: StaticPrice
     price: 3300
     vendPrice: 20000
+  #- type: PirateBountyItem # Mono
+  #  id: ClothingOuterHardsuitTacsuitHighValue
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -260,4 +264,5 @@
   - type: StaticPrice
     price: 4200
     vendPrice: 25000
-
+  #- type: PirateBountyItem # Mono
+  #  id: ClothingOuterHardsuitTacsuitHighValue
