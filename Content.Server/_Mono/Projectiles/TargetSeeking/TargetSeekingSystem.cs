@@ -139,6 +139,9 @@ public sealed partial class TargetSeekingSystem : EntitySystem
         var query = EntityQueryEnumerator<TargetSeekingComponent, PhysicsComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var seekingComp, out var body, out var xform))
         {
+            if (seekingComp.ShotOnly && _projectileQuery.TryComp(uid, out var projectile) && projectile.Weapon == null)
+                continue;
+
             var acceleration = seekingComp.Acceleration * frameTime;
             // Initialize launch speed.
             if (seekingComp.Launched == false)

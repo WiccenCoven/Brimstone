@@ -1,0 +1,28 @@
+- type: technology
+  id: BoardingPods
+  name: research-technology-universal-boarding-pods
+  entityIcon: BasePod
+  discipline: FactionUniversal
+  tier: 1
+  cost: 30000
+  recipeUnlocks:
+  - ZephyrCircuitBoard
+  - SupplyPod
+  - BasePod
+  technologyPrerequisites:
+  - UniversalMaterialResearchT1
+  position: 9, -2
+
+- type: technology
+  id: SpecialPods
+  name: research-technology-universal-special-pods
+  entityIcon: AdvancedPod
+  discipline: FactionUniversal
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+  - AdvancedPod
+  technologyPrerequisites:
+  - BoardingPods
+  - UniversalMaterialResearchT2
+  position: 8, -2

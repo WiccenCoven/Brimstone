@@ -344,6 +344,7 @@
     - NFServiceBoards # Frontier
     - MonoAdvancedShuttleComponents # Mono
     - CarpCaller # Mono
+    - _MonoMachines # Mono
     - MechBoardsPlus
     - AiCoreBoard
     - S2MechBoards

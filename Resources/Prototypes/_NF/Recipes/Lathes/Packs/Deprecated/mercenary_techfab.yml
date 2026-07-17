@@ -205,6 +205,10 @@
   - UllmanWeaponPulseRifle
   - UllmanWeaponPulseSniper
   - UllmanMeleePlasmaBlade
+# Pod Stuff
+  - SupplyPod
+  - BasePod
+  - AdvancedPod
   - WeaponShotgunJack
   ## LPC
   - BalorDroneVoucherMerc
