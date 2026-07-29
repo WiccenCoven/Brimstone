@@ -1,0 +1,45 @@
+#Made with great stress by Eldritch_Pineapple
+- type: vessel
+  id: Arcturus
+  parent: BaseVesselAntag
+  name: TSFN-PIN Arcturus
+  description: A gigantic capital fittingly named after one of the brightest stars once seen from Sol. Glory to the Federation.
+  limit: 1
+  hyperwarLimit: 3
+  hyperwarTimelock: 3600
+  price: 1225950
+  purchasable: false # voucher only
+  category: Large
+  group: Security
+  access: Security
+  shuttlePath: /SharedMaps/_Mono/Shuttles/Capitals/arcturus.yml
+  guidebookPage: Null
+  class:
+  - Capital
+  - Destroyer
+  - Medical
+  - Chemistry
+  - Patrol
+  engine:
+  - AME
+
+- type: gameMap
+  id: Arcturus
+  mapName: 'TSFN-PIN Arcturus'
+  mapPath: /SharedMaps/_Mono/Shuttles/Capitals/arcturus.yml
+  minPlayers: 0
+  stations:
+    Arcturus:
+      stationProto: StandardFrontierSecurityVessel
+      gridComponents:
+      - type: VesselInfo
+        description: "One of the greatest pride and joys of the TSFN. Her turbolaser batteries' shine rivals with the star it was named after. Sol invictus."
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Arcturus TSFN{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          Deputy: [ 0, 0 ]
