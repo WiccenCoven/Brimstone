@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: ari771155
+# Discord: Catshley
+
+# Shuttle Notes: i don't really have much to add aa
+#
+- type: vessel
+  id: Chikara
+  parent: BaseVessel
+  name: VOX-Chikara
+  description: A vessel produced out of the leftovers from previous raids - The Chikara is a disposable Vox raiding vessel, with a nitrogen atmosphere. designed to cripple and board target stations or vessels. It comes equipped with a disposals cannon at the front for launching boarders from a distance.
+  price: 148000 # I guessed entirely when making the price - subject to change
+  category: medium
+  group: Scrap
+  access: Mercenary
+  shuttlePath: /Maps/_Mono/Shuttles/Scrap/chikara.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  - Scrapyard
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Chikara
+  mapName: 'VOX-Chikara'
+  mapPath: /Maps/_Mono/Shuttles/Scrap/chikara.yml
+  minPlayers: 0
+  stations:
+    Chikara:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Chikara MIL-SRP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]
