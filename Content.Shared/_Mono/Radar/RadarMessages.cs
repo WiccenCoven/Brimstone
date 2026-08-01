@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using System.Xml;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
@@ -56,24 +57,15 @@ public sealed class GiveBlipsEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
-public sealed class RequestBlipsEvent : EntityEventArgs
+public sealed class RequestBlipsEvent(NetEntity radar) : EntityEventArgs
 {
-    public NetEntity Radar;
-    public RequestBlipsEvent(NetEntity radar)
-    {
-        Radar = radar;
-    }
+    public readonly NetEntity Radar = radar;
 }
 
 [Serializable, NetSerializable]
-public sealed class BlipRemovalEvent : EntityEventArgs
+public sealed class BlipRemovalEvent(NetEntity netBlipUid) : EntityEventArgs
 {
-    public NetEntity NetBlipUid { get; set; }
-
-    public BlipRemovalEvent(NetEntity netBlipUid)
-    {
-        NetBlipUid = netBlipUid;
-    }
+    public readonly NetEntity NetBlipUid = netBlipUid;
 }
 
 [Serializable, NetSerializable]
@@ -85,6 +77,7 @@ public record struct BlipNetData
     Angle Rotation,
     ushort ConfigIndex,
     ushort? OnGridConfigIndex
+
 );
 
 [Serializable, NetSerializable]
@@ -99,7 +92,7 @@ public record struct MissileVectorNetData
 public record struct HitscanNetData(Vector2 Start, Vector2 End, float Thickness, Color Color);
 
 [Serializable, NetSerializable, DataDefinition]
-public partial record struct BlipConfig
+public partial struct BlipConfig : IEquatable<BlipConfig>
 {
     [DataField]
     public Box2 Bounds = new Box2(-0.5f, -0.5f, 0.5f, 0.5f);
@@ -117,4 +110,33 @@ public partial record struct BlipConfig
     public bool Rotate = false;
 
     public BlipConfig() { }
+
+    public readonly override bool Equals(object? obj)
+    {
+        return obj is BlipConfig other && Equals(other);
+    }
+
+    public readonly bool Equals(BlipConfig other)
+    {
+        return Shape == other.Shape
+            && RespectZoom == other.RespectZoom
+            && Rotate == other.Rotate
+            && Color == other.Color
+            && Bounds == other.Bounds;
+    }
+
+    public override readonly int GetHashCode()
+    {
+        throw new NotSupportedException("BlipConfig is not supported with GetHashCode().");
+    }
+
+    public static bool operator ==(BlipConfig left, BlipConfig right)
+    {
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(BlipConfig left, BlipConfig right)
+    {
+        return !(left == right);
+    }
 }

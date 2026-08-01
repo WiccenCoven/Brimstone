@@ -17,6 +17,7 @@ public sealed partial class RadarBlipsSystem : EntitySystem
     private static readonly TimeSpan RequestThrottle = TimeSpan.FromMilliseconds(500);
 
     private TimeSpan _lastUpdatedTime;
+    private static readonly List<HitscanNetData> EmptyHitscans = new();
     private List<BlipNetData> _blips = new();
     private List<MissileVectorNetData> _missiles = new();
     private List<HitscanNetData> _hitscans = new();
@@ -44,8 +45,14 @@ public sealed partial class RadarBlipsSystem : EntitySystem
 
     private void RemoveBlip(BlipRemovalEvent args)
     {
-        var blipid = _blips.FirstOrDefault(x => x.Uid == args.NetBlipUid);
-        _blips.Remove(blipid);
+        for (var i = 0; i < _blips.Count; i++)
+        {
+            if (_blips[i].Uid == args.NetBlipUid)
+            {
+                _blips.RemoveAt(i);
+                return;
+            }
+        }
     }
 
     public void RequestBlips(EntityUid console)
@@ -153,7 +160,7 @@ public sealed partial class RadarBlipsSystem : EntitySystem
     public List<HitscanNetData> GetHitscanLines()
     {
         if (_timing.CurTime.TotalSeconds - _lastUpdatedTime.TotalSeconds > BlipStaleSeconds)
-            return new();
+            return EmptyHitscans;
 
         return _hitscans;
     }
