@@ -1,0 +1,44 @@
+# Author Info
+# GitHub: Mapleflavourds
+# Discord: Maples @magnomia
+
+- type: vessel
+  id: Granton
+  parent: BaseVesselAntag
+  name: TSF-LOV Granton
+  description: later
+  price: 138300 #112,000 * 1.2 = like somewhere around that
+  category: Medium
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_Mono/Shuttles/Nfsd/granton.yml
+  guidebookPage: Null
+  class:
+  - Patrol
+  - Pursuit
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Granton
+  mapName: 'Granton'
+  mapPath: /Maps/_Mono/Shuttles/Nfsd/granton.yml
+  minPlayers: 0
+  stations:
+    Granton:
+      stationProto: StandardFrontierSecurityVessel
+      gridComponents:
+      - type: VesselInfo
+        description: "Let's ride into the sunset and never come back."
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Granton TSF{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          Deputy: [ 0, 0 ]
+          TsfBorg: [ 0, 0 ]
+
+
