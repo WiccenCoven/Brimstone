@@ -3,7 +3,7 @@
   parent: BaseVesselAntag
   name: BYP Molotok
   description: A broad-headed ram made to fit the connection port of the Ledokol.
-  price: 60000
+  price: 999999 # prevent price invalid
   purchasable: false # voucher only
   category: Large
   group: Custom
@@ -20,6 +20,8 @@
     Molotok:
       stationProto: StandardFrontierVessel
       components:
+        - type: VesselInfo
+          description: "Heavy the hand of our rage. Devastating all who seek to snuff our crawl."
         - type: StationNameSetup
           mapNameTemplate: 'Molotok USSP Ram{1}'
           nameGenerator:
