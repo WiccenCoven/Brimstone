@@ -1,0 +1,40 @@
+# Author Info
+# Discord: lassih
+# Github: LassiH
+
+# Shuttle Notes:
+- type: vessel
+  id: Rattlesnake
+  parent: BaseVessel
+  name: VG Rattlesnake
+  description: A medium sized patrol shuttle armed with 2 ak820's and 2 ak570's comes equipped with a shield
+  price: 105000 # 92k with appraisegrid + 15%
+  category: Medium
+  group: Viper
+  access: Viper
+  shuttlePath: /SharedMaps/_Mono/Shuttles/Viper/rattlesnake.yml
+  guidebookPage: Null
+  class:
+  - Patrol
+  engine:
+  - AME
+
+- type: gameMap
+  id: Rattlesnake
+  mapName: 'VG Rattlesnake'
+  mapPath: /SharedMaps/_Mono/Shuttles/Viper/rattlesnake.yml
+  minPlayers: 0
+  stations:
+    Rattlesnake:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Rattlesnake MIL{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            VGInfanteer: [ 0, 0 ]
+            VGLieutenant: [ 0, 0 ]
+            VGCommander: [ 0, 0 ]
