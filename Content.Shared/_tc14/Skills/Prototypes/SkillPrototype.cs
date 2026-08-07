@@ -11,7 +11,7 @@ public sealed partial class SkillPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; private set; } = default!;
 
     /// <summary>
     /// Skill name, localized. This will be visible to the player.
@@ -23,7 +23,7 @@ public sealed partial class SkillPrototype : IPrototype
     /// Max skill level.
     /// </summary>
     [DataField]
-    public FixedPoint2 MaxLevel = FixedPoint2.New(20);
+    public FixedPoint2 MaxLevel = FixedPoint2.New(10);
 
     /// <summary>
     /// Determines the display priority in menus, descending order.
