@@ -1,0 +1,49 @@
+﻿# Start of Cores
+
+- type: skill
+  id: CoreCognition
+  name: core-cognition
+  priority: 12
+
+- type: skill
+  id: CorePhysique
+  name: core-physique
+  priority: 11
+
+- type: skill
+  id: CoreReflexes
+  name: core-reflexes
+  priority: 10
+
+# Start of Skills.
+
+- type: skill
+  id: SkillMelee
+  name: skill-melee
+  priority: 7
+
+- type: skill
+  id: SkillGuns
+  name: skill-guns
+  priority: 8
+
+- type: skill
+  id: SkillFirstAid
+  name: skill-first-aid
+  priority: 9
+
+- type: skill
+  id: SkillElectrical
+  name: skill-electrical
+  priority: 6
+
+- type: skill
+  id: SkillMechanical
+  name: skill-mechanical
+  priority: 5
+
+- type: skill
+  id: Skill Healthcare
+  name: skill-healthcare
+  priority: 4
+

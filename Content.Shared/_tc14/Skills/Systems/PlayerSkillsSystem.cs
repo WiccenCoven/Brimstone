@@ -167,12 +167,12 @@ public sealed class PlayerSkillsSystem : EntitySystem
         return lvl switch
         {
             0 => new LocId("skills-0"),
-            <= 4 => new LocId("skills-1to4"),
-            <= 8 => new LocId("skills-5to8"),
-            <= 12 => new LocId("skills-9to12"),
-            <= 16 => new LocId("skills-13to16"),
-            <= 19 => new LocId("skills-17to19"),
-            20 => new LocId("skills-20"),
+            <= 1 => new LocId("skills-1"),
+            <= 2 => new LocId("skills-2"),
+            <= 3 => new LocId("skills-3"),
+            <= 4 => new LocId("skills-4"),
+            <= 5 => new LocId("skills-5"),
+            6 => new LocId("skills-6"),
             _ => new LocId("skills-unknown"),
         };
     }
