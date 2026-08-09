@@ -23,7 +23,7 @@ public sealed partial class SkillPrototype : IPrototype
     /// Max skill level.
     /// </summary>
     [DataField]
-    public FixedPoint2 MaxLevel = FixedPoint2.New(10);
+    public FixedPoint2 MaxLevel = FixedPoint2.New(5);
 
     /// <summary>
     /// Determines the display priority in menus, descending order.
@@ -42,4 +42,10 @@ public sealed partial class SkillPrototype : IPrototype
     /// </summary>
     [DataField]
     public FixedPoint2 InitialValue = FixedPoint2.Zero;
+
+    /// <summary>
+    /// Is the skill is actually an Attribute?
+    /// </summary>
+    [DataField]
+    public bool IsAttribute = false;
 }

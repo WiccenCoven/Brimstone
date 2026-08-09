@@ -30,7 +30,7 @@ public sealed partial class SkillPicker : BoxContainer
 
         _passionPoints = _configurationManager.GetCVar(CCVars.MaxPassionPoints);
         _maxPointsPerSkill = _configurationManager.GetCVar(CCVars.MaxPointsPerSkill);
-        _skills = _prototypeManager.EnumeratePrototypes<SkillPrototype>();
+        _skills = _prototypeManager.EnumeratePrototypes<SkillPrototype>().Where(s => s.IsAttribute);
         _skills = _skills.OrderByDescending(s => s.Priority);
         BuildEntries(passions);
         UpdatePassions();
@@ -51,8 +51,8 @@ public sealed partial class SkillPicker : BoxContainer
             {
                 HorizontalAlignment = HAlignment.Center,
                 HorizontalExpand = true,
-                Value = 0,
-                IsValid = i => i >= 0 && i <= _maxPointsPerSkill,
+                Value = 1,
+                IsValid = i => i >= 1 && i <= _maxPointsPerSkill,
             };
             if (passions.TryGetValue(skill.ID, out var value))
                 passionSpinBox.Value = value;

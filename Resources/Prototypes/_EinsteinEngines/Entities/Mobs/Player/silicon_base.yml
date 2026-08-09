@@ -332,3 +332,6 @@
   # Mono
   - type: ShipNpcTarget
     needGrid: NoGrid
+  # Brimstone
+  - type: ESViewcone
+  - type: ESHoldToFace

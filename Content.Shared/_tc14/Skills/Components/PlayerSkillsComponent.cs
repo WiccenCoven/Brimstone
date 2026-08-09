@@ -16,4 +16,5 @@ public sealed partial class PlayerSkillsComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public Dictionary<ProtoId<SkillPrototype>, FixedPoint2> Skills = new();
+
 }

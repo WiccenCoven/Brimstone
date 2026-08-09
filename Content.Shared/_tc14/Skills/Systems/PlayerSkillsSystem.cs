@@ -154,8 +154,8 @@ public sealed class PlayerSkillsSystem : EntitySystem
     /// </summary>
     public bool? Contest(ProtoId<SkillPrototype> skillId, EntityUid first, EntityUid second)
     {
-        var firstRoll = MakeRoll(skillId, first, 20);
-        var secondRoll = MakeRoll(skillId, second, 20);
+        var firstRoll = MakeRoll(skillId, first, 10);
+        var secondRoll = MakeRoll(skillId, second, 10);
         if (firstRoll == secondRoll)
             return null;
         return firstRoll > secondRoll;
