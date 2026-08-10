@@ -36,18 +36,9 @@ public sealed class PlayerSkillsSystem : EntitySystem
     private void OnPlayerSpawn(EntityUid uid, PlayerSkillsComponent component, ref PlayerSpawnCompleteEvent args)
     {
         var passions = args.Profile.Passions;
-        var passionList = new List<ProtoId<SkillPrototype>>();
-        var skills = GetSkills(uid);
-        if (skills is null)
-            return;
-        foreach (var skillProto in skills.Keys)
+        foreach (var (skillProto, passionLevel) in passions)
         {
-            passions.TryGetValue(skillProto, out var passionPoints);
-            passionList.AddRange(Enumerable.Repeat(skillProto, passionPoints + 1));
-        }
-        for (var i = 0; i < _skillPointsAmount; i++)
-        {
-            AddSkillExperience(_random.Pick(passionList), uid, FixedPoint2.New(1));
+            SetSkillExperience(skillProto, uid, passionLevel);
         }
     }
 

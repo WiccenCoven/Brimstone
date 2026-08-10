@@ -697,13 +697,13 @@ namespace Content.Shared.Preferences
             }
 
             // TC14: validate passions
-            // TODO unhardcode the passion limit of 5 - there is a cvar for it
+            // TODO unhardcode the passion limit of 9 - there is a cvar for it
             var passionSum = 0;
             foreach (var pair in Passions)
             {
-                if (passionSum + pair.Value > 5)
+                if (passionSum + pair.Value > 9)
                 {
-                    _passions[pair.Key] = 5 - passionSum;
+                    _passions[pair.Key] = 9 - passionSum;
                 }
 
                 passionSum += _passions[pair.Key];
