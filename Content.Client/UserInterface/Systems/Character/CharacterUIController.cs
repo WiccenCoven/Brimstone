@@ -189,18 +189,21 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
             _window.Objectives.AddChild(objectiveControl);
         }
 
-        foreach (var (skillId, skillExp) in skills)
+        if (skills != null)
         {
-            if (!_prototypeManager.Resolve(skillId, out var prototype))
-                continue;
-            var skillText = new FormattedMessage();
-            skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
-                ("skill", Loc.GetString(prototype.Name)),
-                    ("level", Loc.GetString(_skills.GetVerbalLevelDesc(skillExp)))),
-                out _);
-            var skillLabel = new RichTextLabel();
-            skillLabel.SetMessage(skillText);
-            _window.Skills.AddChild(skillLabel);
+            foreach (var (skillId, skillExp) in skills)
+            {
+                if (!_prototypeManager.Resolve(skillId, out var prototype))
+                    continue;
+                var skillText = new FormattedMessage();
+                skillText.TryAddMarkup(Loc.GetString("character-info-skill-text",
+                        ("skill", Loc.GetString(prototype.Name)),
+                        ("level", Loc.GetString(_skills.GetVerbalLevelDesc(skillExp)))),
+                    out _);
+                var skillLabel = new RichTextLabel();
+                skillLabel.SetMessage(skillText);
+                _window.Skills.AddChild(skillLabel);
+            }
         }
 
         if (briefing != null)
