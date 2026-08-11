@@ -1,0 +1,60 @@
+﻿# Start of Cores
+- type: skill
+  id: AttributeCognition
+  name: core-cognition
+  priority: 12
+  isAttribute: true
+  deltaPoint: 0
+
+- type: skill
+  id: AttributePhysique
+  name: core-physique
+  priority: 11
+  isAttribute: true
+  deltaPoint: 0
+
+- type: skill
+  id: AttributeReflexes
+  name: core-reflexes
+  priority: 10
+  isAttribute: true
+  deltaPoint: 0
+
+# Start of Skills.
+
+- type: skill
+  id: SkillMelee
+  name: skill-melee
+  priority: 7
+  deltaPoint: 0
+
+- type: skill
+  id: SkillGuns
+  name: skill-guns
+  priority: 8
+  deltaPoint: 0
+
+- type: skill
+  id: SkillFirstAid
+  name: skill-first-aid
+  priority: 9
+  deltaPoint: 0
+
+- type: skill
+  id: SkillElectrical
+  name: skill-electrical
+  priority: 6
+  deltaPoint: 0
+
+- type: skill
+  id: SkillMechanical
+  name: skill-mechanical
+  priority: 5
+  deltaPoint: 0
+
+- type: skill
+  id: SkillHealthcare
+  name: skill-healthcare
+  priority: 4
+  deltaPoint: 0
+
