@@ -5,21 +5,20 @@ core-physique = [color=yellow]CORE: Physique[/color]
 core-cognition = [color=mediumpurple]CORE: Cognition[/color]
 core-reflexes = [color=red]CORE: Reflexes[/color]
 
-skill-electrical = [color=yellow]SKILL: Electrical[/color]
-skill-mechanical = [color=blue]SKILL: Mechanical[/color]
-skill-healthcare = [color=lightblue]SKILL: Healthcare[/color]
+skill-technoflex = [color=mediumpurple]> SKILL: Technoflex[/color]
+skill-healthcare = [color=mediumpurple]> SKILL: Healthcare[/color]
 
-skill-melee = [color=red]SKILL: Melee[/color]
-skill-guns = [color=red]SKILL: Guns[/color]
-skill-first-aid = [color=lightblue]SKILL: First Aid[/color]
+skill-melee = [color=red]> SKILL: Melee[/color]
+skill-guns = [color=red]> SKILL: Guns[/color]
+skill-first-aid = [color=red]> SKILL: First Aid[/color]
 
-skills-0 = 0 // Untrained
-skills-1 = 1 // Trainee
-skills-2 = 2 // Associate
-skills-3 = 3 // Qualified
-skills-4 = 4 // Specialist
-skills-5 = 5 // Master
-skills-6 = 6 // Legendary
+skills-0 = 0
+skills-1 = 1
+skills-2 = 2
+skills-3 = 3
+skills-4 = 4
+skills-5 = 5
+skills-6 = 6
 skills-unknown = Unknown
 
 skills-passionmenu-name = Attributes
