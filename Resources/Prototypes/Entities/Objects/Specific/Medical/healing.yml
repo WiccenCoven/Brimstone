@@ -377,6 +377,7 @@
     sprite: _NF/Objects/Specific/Medical/healing_toolbox.rsi # Frontier: _NF prefix
     state: icon
   - type: Healing
+    postHealer: true
     damageContainers:
     - Biological
     damage:
@@ -384,8 +385,10 @@
         Brute: -150
         Burn: -150
         Toxin: -150
+        Airloss: -150
+        Genetic: -150
     bloodlossModifier: -20
-    delay: 1
+    delay: 0
     selfHealPenaltyMultiplier: 0
     healingBeginSound:
       path: "/Audio/Items/Medical/ointment_begin.ogg"
