@@ -377,7 +377,7 @@
     sprite: _NF/Objects/Specific/Medical/healing_toolbox.rsi # Frontier: _NF prefix
     state: icon
   - type: Healing
-    postHealer: true
+    PostHealer: true
     damageContainers:
     - Biological
     damage:
