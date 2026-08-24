@@ -66,8 +66,7 @@ namespace Content.Server.Medical.Components
         /// <summary>
         /// Post-Healer? I.E, does this clear the damage memory.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("posthealer")]
+        [DataField("PostHealer")]
         public bool PostHealer = false;
     }
 }
