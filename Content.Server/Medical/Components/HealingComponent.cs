@@ -62,5 +62,11 @@ namespace Content.Server.Medical.Components
         /// </summary>
         [DataField("healingEndSound")]
         public SoundSpecifier? HealingEndSound = null;
+
+        /// <summary>
+        /// Post-Healer? I.E, does this clear the damage memory.
+        /// </summary>
+        [DataField("PostHealer")]
+        public bool PostHealer = false;
     }
 }

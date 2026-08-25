@@ -27,6 +27,7 @@ using Robust.Shared.Audio;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Components;
 using System.Linq;
+using Content.Server._Brimstone.HareMed.DamageMemory;
 
 namespace Content.Server.Medical;
 
@@ -221,6 +222,11 @@ public sealed partial class HealingSystem : EntitySystem
         {
             var msg = Loc.GetString("medical-item-popup-target", ("user", Identity.Entity(user, EntityManager)), ("item", uid));
             _popupSystem.PopupEntity(msg, target, target, PopupType.Medium);
+        }
+
+        if (TryComp<WicceDamageMemoryComponent>(target, out var memory))
+        {
+            memory.MemoryClear = true;
         }
 
         var delay = isNotSelf
