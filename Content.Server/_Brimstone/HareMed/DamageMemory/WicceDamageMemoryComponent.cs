@@ -6,7 +6,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server._Brimstone.HareMed.DamageMemory;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class WicceDamageMemoryComponent : Component
 {
     /// <summary>
