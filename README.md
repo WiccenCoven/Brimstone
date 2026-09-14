@@ -1,20 +1,21 @@
-<p align="center"> <img alt="Frontier Station 14" width="880" height="300" src="https://raw.githubusercontent.com/Monolith-Station/Monolith/89d435f0d2c54c4b0e6c3b1bf4493c9c908a6ac7/Resources/Textures/_Mono/Logo/logo.png?raw=true" /></p>
+<img width="1600" height="1067" alt="VicceColorless" src="https://github.com/user-attachments/assets/592c6d1a-39de-4daf-9dfb-bb5c09cc4c23" />
 
-Monolith is a fork of [Frontier Station 14](https://github.com/new-frontiers-14/frontier-station-14) that runs on the [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
+Brimstone is a fork of Monolith which is a fork of Frontier that runs on the [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
 
-This is the primary repo for Monolith.
+It is designed around a "ground up" philosophy.
 
-If you want to host or create content for Monolith, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
+This is the "development" fork, featuring the core necessities that make Wicce's Brimstone. It may or may not lack certain "secret" content, such as chemical recipes and visual assets.  
 
 ## Links
+Repository: [Brimstone](https://github.com/WiccenCoven/Brimstone)
+Repository: [Monolith](https://github.com/Monolith-Station/Monolith)
+Repository: [Frontier Station 14](https://github.com/new-frontiers-14/frontier-station-14)
 
-[Discord](https://discord.gg/mxY4h2JuUw) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/)
+Discord: [Wicce](https://discord.gg/XH7hk5TS74)
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. Don't be afraid to ask for help either!
-
-We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language consider creating a fork or contributing to a fork.
+While we are happy to accept assistance from anybody of any skill level, since Brimstone is designed "ground up" compared to other forks who inherit (lore, content, mechanics, etc) and just run with what they have, you may find your vision conflicting with ours. Please get in contact with Jaeger herself or a maintainer before pitching an idea. We would hate for you to spend a lot of time making a feature that we simply don't want.
 
 ## Building
 
@@ -25,7 +26,6 @@ We provide some scripts shown below to make the job easier.
 
 > - Git
 > - .NET SDK 10.0
-
 
 ### Windows
 
@@ -53,6 +53,8 @@ We provide some scripts shown below to make the job easier.
 
 ## License
 
+IMPORTANT: Some Wicce code and assets are licensed under ALL RIGHTS RESERVED, and may or may not be in this repository. Such items are clearly marked in their respective `meta.json` or at the top of the file. 
+
 See the REUSE headers for detailed licensing information for each file for the specific licenses contributions are made under. The work as a whole is licensed under GNU Affero General Public License version 3.0.
 
 By default, original code contributed to the Monolith codebase after 04d8ce483f638320d1b85a7aaacdf01442757363 is under Mozilla Public License version 2.0 with Exhibit B removed. See `LICENSE-MPL.txt`.
@@ -60,7 +62,6 @@ By default, original code contributed to the Monolith codebase after 04d8ce483f6
 Content contributed to this repository after commit 2fca06eaba205ae6fe3aceb8ae2a0594f0effee0 is licensed under the GNU Affero General Public License version 3.0, unless otherwise stated. See `LICENSE-AGPLv3.txt`.
 
 Content contributed to this repository before commit 2fca06eaba205ae6fe3aceb8ae2a0594f0effee0 is licensed under the MIT license, unless otherwise stated. See `LICENSE-MIT.txt`.
-
 
 [2fca06eaba205ae6fe3aceb8ae2a0594f0effee0](https://github.com/new-frontiers-14/frontier-station-14/commit/2fca06eaba205ae6fe3aceb8ae2a0594f0effee0) was pushed on July 1, 2024 at 16:04 UTC
 
